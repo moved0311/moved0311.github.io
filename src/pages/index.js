@@ -4,11 +4,13 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Tag from "../components/tag"
 import { rhythm } from "../utils/typography"
+import _ from "lodash"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = _.get(data, "site.siteMetadata.title", "")
+  const posts = _.get(data, "allMarkdownRemark.edges", [])
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -16,6 +18,7 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        const tags = _.get(node, "frontmatter.tags", [])
         return (
           <article key={node.fields.slug}>
             <header>
@@ -29,11 +32,8 @@ const BlogIndex = ({ data, location }) => {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
-              {/* not work */}
-              <script
-                async
-                src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML"
-              ></script>
+
+              {tags && <Tag>{tags}</Tag>}
             </header>
             <section>
               <p
@@ -69,6 +69,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

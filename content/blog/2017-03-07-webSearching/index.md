@@ -1,6 +1,7 @@
 ---
 title: WebSearching
 date: "2017-03-07"
+tags: ["學校課程"]
 ---
 
 <hr>
@@ -775,7 +776,7 @@ $K(x_i,x_j)=x_i^Tx_j$
 #### Common kernels
 
 - Linear
-- Polynomial \\\\\\\\\$\$
+- Polynomial \\\\\\\\\\$\$
 - Radial basis function(infinite dimensional space)
   <!---------------------------- class -------------------------------------------->
   <!---------------------------- class -------------------------------------------->

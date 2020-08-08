@@ -1,5 +1,5 @@
 ---
-title: Data Structure
+title: Linked List
 date: "2017-03-27"
 tags: ["資料結構"]
 ---

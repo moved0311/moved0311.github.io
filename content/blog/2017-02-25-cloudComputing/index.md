@@ -1,8 +1,7 @@
 ---
 title: SocialCloudComputing
 date: "2017-02-25"
-tags:
-  - "學校課程"
+tags: ["學校課程"]
 ---
 
 ### Outline
