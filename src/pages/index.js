@@ -29,6 +29,11 @@ const BlogIndex = ({ data, location }) => {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
+              {/* not work */}
+              <script
+                async
+                src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML"
+              ></script>
             </header>
             <section>
               <p

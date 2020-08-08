@@ -14,8 +14,6 @@ date: "2017-03-07"
 3. 二氧化碳排放量
 4. 和搜尋相關程度
 
-<!--more-->
-
 相關程度
 
 1. benchmark 資料集
@@ -27,41 +25,42 @@ queries 和 information need 有落差
 
 **Precision (P)**
 
-> Precision = $$\frac{檢索到相關物件的數量}{物件總數}\$$
+> Precision = $$\frac{檢索到相關物件的數量}{物件總數}$$
 
 **Recall (R)**
 
-> Recall = $$\frac{檢索到相關物件的數量}{相關物件總數}\$$
+> Recall = $$\frac{檢索到相關物件的數量}{相關物件總數}$$
 
-||Relevant|Nonrelevent|
-|Retrieved|true positive(tp)|false positive(fp)|
-|Not retrieved|false negatives(fn)|true negatives(tn)|
+|               | Relevant            | Nonrelevent        |
+| ------------- | ------------------- | ------------------ |
+| Retrieved     | true positive(tp)   | false positive(fp) |
+| Not retrieved | false negatives(fn) | true negatives(tn) |
 
 true positive(tp) 機器判斷+且為真  
 false positive(fp)機器判斷+但是是假  
 false negatives(fn) 機器判斷-但判斷錯  
 true negatives(tn) 機器判斷-且判斷對
 
-P = $$\frac{tp}{tp+fp}\$$
+P = $$\frac{tp}{tp+fp}$$
 
-R = $$\frac{tp}{tp+fn}\$$
+R = $$\frac{tp}{tp+fn}$$
 
 **Accuracy vs Precision**  
-accuracy = $$\frac{tp+tn}{tp+fp+fn+tn}\$$
+accuracy = $$\frac{tp+tn}{tp+fp+fn+tn}$$
 
 > accuracy 不適合用在 information retrieval,
 > 因為通常 Nonrelevant 會非常的大,tn 項非常大除分母 fn 和 tn 都非常大結果會趨近於 1,所以才用 Precision 和 Recall 作為依據
 
 **調和平均數(harmonic mean)**
 
-> H = $$\frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+..+\frac{1}{x_n}}\$$
+> H = $$\frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+..+\frac{1}{x_n}}$$
 
 Precision/Recall Tradoff
 使用調和平均數計算 Precision 和 Recall 的 Tradoff  
 量測的數值稱做 F measure,&alpha;和 1-&alpha;分別為 P 和 R 的權重,一般是取&alpha;=0.5  
 (P 和 R 重要程度相同)
 
-> F = $$\frac{1}{\alpha\frac{1}{P}+(1-\alpha)\frac{1}{R}} = \frac{(\beta^2+1)PR}{\beta^2P+R}\$$ where $$\ \beta^2=\frac{1-\alpha}{\alpha}\$$
+> F = $$\frac{1}{\alpha\frac{1}{P}+(1-\alpha)\frac{1}{R}} = \frac{(\beta^2+1)PR}{\beta^2P+R}$$ where $$\ \beta^2=\frac{1-\alpha}{\alpha}$$
 
 #### Ranked Evalution
 
@@ -73,14 +72,14 @@ P-R curve 的面積越大效能越佳(代表 Precision 掉越慢)
 
 **內插法**
 
-> $$\ p_{interp}= \max\limits_{r'\ge r}\ p(r{'})\$$
+> $$\ p_{interp}= \max\limits_{r'\ge r}\ p(r{'})$$
 
 r 代表 recall,
 作法是從目前往後找最高的點向前填平,並重新畫 P-R 圖
 
 **Mean Average Precision(MAP)**
 
-> $$\ MAP(Q) = \frac{1}{|Q|}\sum^{|Q|}_{j=1}\frac{1}{m_j}\sum_{k=1}^{m_j}Precision(R_{jk})\$$
+> $$\ MAP(Q) = \frac{1}{|Q|}\sum^{|Q|}_{j=1}\frac{1}{m_j}\sum_{k=1}^{m_j}Precision(R_{jk})$$
 
 第一個 sum 算 query 平均  
 第二個 sum 算 precision 平均
@@ -114,11 +113,10 @@ G 表示一個搜索的結果(3 高度相關, 0 沒關係)
    G[1], &if\ i=1 \\
    CG[i-1]+G[i], &otherwise
    \end{matrix}\right.
-   \$$
+   $$
 
    目前項+＝前一項(做成一個遞增的函數)
    CG'=<3,5,8,8,8,9,11,13,16,16,...>
-   $$
 
 2. Discounted Cumulative Gain(DCG)
 
@@ -129,17 +127,16 @@ G 表示一個搜索的結果(3 高度相關, 0 沒關係)
    G[i], & if\ i=1\\
    DCG[i-1]+G[i]/log_b\ i, & otherwise
    \end{matrix}\right.
-   \$$
+   $$
 
    DCG'=<3,5,6.89,6.89,6.89,7.28,7.99,8.66,9.61,9.61,...> if b=2
-   i代表排名,對排名做懲罰(除log<sub>2</sub> i),排名越後面懲罰越重
+   i 代表排名,對排名做懲罰(除 log<sub>2</sub> i),排名越後面懲罰越重
    代表如果搜尋的結果很差,和理想的排序分數會相差很多
-   $$
 
 3. Normalized Discounted Cumulative Gain(NDCG)  
    理想的搜索結果 I=<3,3,3,2,2,2,1,1,1,1,0,0,0,...>(高度相關的排越前面)  
    理想搜索結果 DCGI=<3,6,7.89,8.89,9.75,10.52,10.88,11.21,...>  
-   nDCG<sub>n</sub> = $$\ \frac{DCG_{n}}{IDCG_{n}}(\frac{相關程度排序}{理想相關程度},做正規化)\$$  
+   nDCG<sub>n</sub> = $$\ \frac{DCG_{n}}{IDCG_{n}}(\frac{相關程度排序}{理想相關程度},做正規化)$$  
    NDCG=<1,0.83,0.87,0.77,0.70,0.69,0.73,0.77,...>
 
 **benchmark 資料集**
@@ -161,7 +158,7 @@ Kappa measure
 
 Kappa 計算公式
 
-> $$\ \kappa = \frac{P(A)-P(E)}{1-P(E)}\$$
+> $$\ \kappa = \frac{P(A)-P(E)}{1-P(E)}$$
 
 **搜尋結果的呈現 Result Summaries**
 
@@ -294,6 +291,7 @@ TF-IDF 計算方法:
 
 <br/>
 <hr>
+
 # Ch11 Probabilistic Information Retrieval
 
 **Probability theory**
@@ -413,16 +411,17 @@ $$ RSV_d = log \prod_{t:D_t=Q_t=1} \frac{p_t(1-u_t)}{u_t(1-p_t)} = \sum_{t:D_t=Q
 **RSJ Model:No Relevance Info**
 
 $$
-\sum_{t=1,D_t=Q_t=1}^{k} log \frac{p_t(1-u_t)}{u_t(1-p_t)}  $$
-
-如果沒有給relevance judgements,
-* assume $$ p_t $$ to be a constant
-* Estimate $$u_t$$ by assume all documents to be non-relevant
-
-1979 Croft&Harper
+\sum_{t=1,D_t=Q_t=1}^{k} log \frac{p_t(1-u_t)}{u_t(1-p_t)}
 $$
 
-\sum\\\_{t=1,D_t=Q_t=1}^{k} log \frac{N - n_t + 0.5}{n_t + 0.5} \\\$\$
+如果沒有給 relevance judgements,
+
+- assume $$ p_t $$ to be a constant
+- Estimate $$u_t$$ by assume all documents to be non-relevant
+
+1979 Croft&Harper
+
+$$ \sum{t=1,D_t=Q_t=1}^{k} log \frac{N - n_t + 0.5}{n_t + 0.5} $$
 
 > N: number of documents in collection  
 > $$n_t$$ : number of documents in which term $$D_t$$ occurs
@@ -587,15 +586,14 @@ Two idea
 Evaluations
 測試資料和 training data 不能有 overlapping
 
-<!-- class -->
-
 <hr>
-<!---------------------------- 20170517 -------------------------------------------->
+
 # CH14 Vector Space Classification
-* <a href="#ch14_1">Rocchio classification</a>
-* <a href="#ch14_2">kNN classification</a>
-* <a href="#ch14_3">linear classification</a>
-* <a href="#ch14_4">Bias-Variance Tradeoff</a>
+
+- <a href="#ch14_1">Rocchio classification</a>
+- <a href="#ch14_2">kNN classification</a>
+- <a href="#ch14_3">linear classification</a>
+- <a href="#ch14_4">Bias-Variance Tradeoff</a>
 
 #### Vector Space Classification 基本假設
 
@@ -663,6 +661,7 @@ Linear Classifier 算是多個方法的集大成
 e.g. Naive Bayes,Perceptron,Rocchio,Logistic regression,Support vector machines(with linear kernel),Linear regression with threshold
 
 <h2 id="ch14_4">Bias-Variance Tradeoff</h2>
+
 > 一種量測分類方法的指標
 
 [Bias-variance wiki](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
@@ -776,7 +775,7 @@ $K(x_i,x_j)=x_i^Tx_j$
 #### Common kernels
 
 - Linear
-- Polynomial \\\$\$
+- Polynomial \\\\\\\\\$\$
 - Radial basis function(infinite dimensional space)
   <!---------------------------- class -------------------------------------------->
   <!---------------------------- class -------------------------------------------->
@@ -843,10 +842,6 @@ O(IKNM)
 
 Page Rank
 
-<!---------------------------- class -------------------------------------------->
-
-<!---------------------------- class -------------------------------------------->
-
 Ch21 Link Analysis
 
 - Anchor Text
@@ -891,5 +886,3 @@ $a = A^Th$
 
 A 代表相鄰矩陣
 a 的初始值($a_0$)在第一輪都設定為一樣
-
-<!---------------------------- class -------------------------------------------->
