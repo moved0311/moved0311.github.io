@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 Aug 2020 19:44:14 GMT</lastBuildDate><item><title><![CDATA[如何製作口罩地圖(React+Leaflet)]]></title><description><![CDATA[練習範例 Example Demo 1. 安裝 React 環境 2. 建立一個 Component 建立檔案，用來呈現地圖的 Component 將建立的 Maskmap 元件在 App 中使用。 呈現結果
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 09 Aug 2020 17:14:57 GMT</lastBuildDate><item><title><![CDATA[如何製作口罩地圖(React+Leaflet)]]></title><description><![CDATA[練習範例 Example Demo 1. 安裝 React 環境 2. 建立一個 Component 建立檔案，用來呈現地圖的 Component 將建立的 Maskmap 元件在 App 中使用。 呈現結果
  3.載入 Leaflet 地圖 使用 OpenStreetmap…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/2020-02-15-maskmap/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/2020-02-15-maskmap/</guid><pubDate>Sat, 15 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;練習範例&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://moved0311.github.io/pharmacy-mask-map/&quot;&gt;Example Demo&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;1. 安裝 React 環境&lt;/h2&gt;
@@ -2426,11 +2426,12 @@ Degree-sequence anonymization
 &lt;!----------------------------------- class ---------------------------------------------&gt;
 &lt;!----------------------------------- class ---------------------------------------------&gt;
 &lt;h1&gt;Networks with Signed Edges&lt;/h1&gt;
-&lt;!----------------------------------- class ---------------------------------------------&gt;</content:encoded></item><item><title><![CDATA[Start Gatsby blog]]></title><description><![CDATA[Install and fast start gatsby-starter-blog Add Tags How to add Tags to your Gatsby blog - Part 1s]]></description><link>https://gatsby-starter-blog-demo.netlify.app/hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;Install and fast start&lt;/h2&gt;
+&lt;!----------------------------------- class ---------------------------------------------&gt;</content:encoded></item><item><title><![CDATA[Start Gatsby blog]]></title><description><![CDATA[Install and fast start gatsby-starter-blog Add Tags How to add Tags to your Gatsby blog - Part 1s Creating Tags Pages for Blog Posts]]></description><link>https://gatsby-starter-blog-demo.netlify.app/hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;Install and fast start&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/&quot;&gt;gatsby-starter-blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Add Tags&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://dev.to/gabcimato/how-to-add-tags-to-your-gatsby-blog-part-1-34fk&quot;&gt;How to add Tags to your Gatsby blog - Part 1s&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/&quot;&gt;Creating Tags Pages for Blog Posts&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item></channel></rss>
