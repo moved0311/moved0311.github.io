@@ -12,3 +12,5 @@ tags: ["Gatsby"]
 ## Add Tags
 
 - [How to add Tags to your Gatsby blog - Part 1s](https://dev.to/gabcimato/how-to-add-tags-to-your-gatsby-blog-part-1-34fk)
+
+- [Creating Tags Pages for Blog Posts](https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/)

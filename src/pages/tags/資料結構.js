@@ -1,24 +1,21 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Tag from "../components/tag"
-import Categories from "../components/categories"
-import { rhythm } from "../utils/typography"
+import Bio from "../../components/bio"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import Tag from "../../components/tag"
+import { rhythm } from "../../utils/typography"
 import _ from "lodash"
 
-const BlogIndex = ({ data, location }) => {
+const TagPage = ({ data, location }) => {
   const siteTitle = _.get(data, "site.siteMetadata.title", "")
   const posts = _.get(data, "allMarkdownRemark.edges", [])
-  const categories = _.get(data, "allMarkdownRemark.group", [])
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <Categories categories={categories} />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         const tags = _.get(node, "frontmatter.tags", [])
@@ -52,7 +49,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default TagPage
 
 export const pageQuery = graphql`
   query {
@@ -61,7 +58,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: "資料結構" } } }
+    ) {
       edges {
         node {
           excerpt
