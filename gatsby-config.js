@@ -6,7 +6,7 @@ module.exports = {
       summary: `who lives and works in Taiwan.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://moved0311.github.io/`,
     social: {
       twitter: `kylemathews`,
     },
@@ -52,6 +52,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-feed`,
         ],
       },
     },
