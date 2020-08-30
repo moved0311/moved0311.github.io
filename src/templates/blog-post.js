@@ -5,11 +5,27 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import InsertionSort from "../components/sort/InsertionSort"
+import rehypeReact from "rehype-react"
+import styled from "styled-components"
+
+const StyledSection = styled.section`
+  pre {
+    background: white;
+    border: 1px solid #eee;
+  }
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
+  const renderAst = new rehypeReact({
+    createElement: React.createElement,
+    components: {
+      "sort-insertion": InsertionSort,
+    },
+  }).Compiler
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -37,7 +53,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <StyledSection>{renderAst(post.htmlAst)}</StyledSection>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -90,7 +106,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      htmlAst
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

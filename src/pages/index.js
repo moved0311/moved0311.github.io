@@ -13,7 +13,6 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = _.get(data, "site.siteMetadata.title", "")
   const posts = _.get(data, "allMarkdownRemark.edges", [])
   const categories = _.get(data, "allMarkdownRemark.group", [])
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
