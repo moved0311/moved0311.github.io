@@ -60,7 +60,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: "資料結構" } } }
+      filter: { frontmatter: { tags: { in: "DataStructure" } } }
     ) {
       edges {
         node {

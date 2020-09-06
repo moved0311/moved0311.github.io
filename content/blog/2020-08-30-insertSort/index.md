@@ -1,6 +1,7 @@
 ---
 title: Insertion Sort
 date: "2020-08-30"
+tags: ["Algorithms"]
 ---
 
 ```js
