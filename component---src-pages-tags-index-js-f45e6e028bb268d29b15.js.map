@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/tags/index.js"],"names":["AllTags"],"mappings":"2FAAA,OAIeA,UAJC,WACd,MAAO","file":"component---src-pages-tags-index-js-f45e6e028bb268d29b15.js","sourcesContent":["const AllTags = () => {\n  return \"all tags\"\n}\n\nexport default AllTags\n"],"sourceRoot":""}
