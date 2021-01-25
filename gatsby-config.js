@@ -8,7 +8,9 @@ module.exports = {
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://moved0311.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      github: `https://github.com/moved0311`,
+      twitter: "taiyi_",
+      facebook: "https://www.facebook.com/profile.php?id=100000329876068",
     },
   },
   plugins: [

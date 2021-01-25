@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
+import Contact from "../components/contact"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tag from "../components/tag"
@@ -16,6 +17,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+      <Contact />
       <Bio />
       <Categories categories={categories} />
       {posts.map(({ node }) => {

@@ -8,8 +8,14 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+const BioContainer = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -28,7 +34,8 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            github
+            facebook
           }
         }
       }
@@ -37,12 +44,7 @@ const Bio = () => {
 
   const { author } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(1),
-      }}
-    >
+    <BioContainer>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
@@ -56,13 +58,10 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
+      <div>
         Written by <strong>{author.name}</strong> {author.summary}
-        {/* <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a> */}
-      </p>
-    </div>
+      </div>
+    </BioContainer>
   )
 }
 
