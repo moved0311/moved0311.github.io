@@ -24,5 +24,3 @@ console.log("before: ", arr)
 InsertionSort(arr)
 console.log("after:  ", arr)
 ```
-
-<!-- <sort-insertion/> -->

@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 const Container = styled.ul`
   display: inline-flex;
   margin-left: 5px;
+  flex-wrap: wrap;
 `
 const StyledTag = styled.li`
   border-radius: 4px;

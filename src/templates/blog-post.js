@@ -5,7 +5,6 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import InsertionSort from "../components/sort/InsertionSort"
 import rehypeReact from "rehype-react"
 import styled from "styled-components"
 
@@ -22,9 +21,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
   const renderAst = new rehypeReact({
     createElement: React.createElement,
-    components: {
-      "sort-insertion": InsertionSort,
-    },
   }).Compiler
 
   return (
