@@ -1,4 +1,281 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 21 Mar 2021 06:51:52 GMT</lastBuildDate><item><title><![CDATA[CS50]]></title><description><![CDATA[Portal edX CS50’s Introduction to Computer Science
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 21 Mar 2021 20:34:10 GMT</lastBuildDate><item><title><![CDATA[Linux 核心設計 2021q1 Homework1 (lab0)]]></title><description><![CDATA[作業說明 課程連結 J01: lab0 取得作業程式碼sysprog21/lab0-c 作業目標 透過 linked list 實作 queue 的各種操作方法 new queue free queue insert head insert tail remove head…]]></description><link>https://moved0311.github.io/2021-03-22-linux-lab0-c/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-22-linux-lab0-c/</guid><pubDate>Mon, 22 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;作業說明&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.csie.ncku.edu.tw/linux/schedule&quot;&gt;課程連結&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hackmd.io/@sysprog/linux2021-lab0&quot;&gt;J01: lab0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;取得作業程式碼&lt;a href=&quot;https://github.com/sysprog21/lab0-c&quot;&gt;sysprog21/lab0-c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;作業目標&lt;/h1&gt;
+&lt;p&gt;透過 linked list 實作 queue 的各種操作方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; new queue&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; free queue&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; insert head&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; insert tail&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; remove head&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; revesre queue&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; sort queue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;執行方式&lt;/h1&gt;
+&lt;h2&gt;安裝必要檔案&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; build-essential &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clang-format cppcheck &lt;span class=&quot;token function&quot;&gt;aspell&lt;/span&gt; colordiff valgrind&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;執行檔案&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 執行自動評分測試&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;實作(修改 queue.c / queue.h)&lt;/h1&gt;
+&lt;h2&gt;New queue(q_new)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;q_new&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;malloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;size &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; q&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Free queue(q_free)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;q_free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;tmp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        tmp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; tmp&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tmp&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tmp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Insert head(q_insert_head)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;原本使用 strcpy()來複製字串，但在 commit 時會報錯 strcpy 已經棄用，於是改用 strncpy()。
+&lt;img src=&quot;https://i.imgur.com/2T077MA.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;複製完字串後要補上結束字元&lt;code class=&quot;language-text&quot;&gt;\0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;bool &lt;span class=&quot;token function&quot;&gt;q_insert_head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;newh&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    newh &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;malloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;list_ele_t&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;newh&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;·
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    newh&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;malloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;newh&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;newh&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;strncpy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;newh&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;newh&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;\0&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    newh&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; newh&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;size &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; newh&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;size &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; true&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Insert tail(q_insert_tail)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;bool &lt;span class=&quot;token function&quot;&gt;q_insert_tail&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    node &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;malloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;list_ele_t&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    node&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;malloc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    node&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;node&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;strncpy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;node&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;node&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;\0&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;size &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;size &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; true&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Remove queue head(q_remove_head)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;bool &lt;span class=&quot;token function&quot;&gt;q_remove_head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;sp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; size_t bufsize&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;tmp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    size_t headlen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tmp&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    size_t cpylen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; headlen &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; bufsize &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; headlen &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; bufsize &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;strncpy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; tmp&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; cpylen&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sp &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; cpylen&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;\0&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; tmp&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;size &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tmp&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;free&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tmp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; true&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Queue size(q_size)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;q_size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Reverse queue (q_reverse)&lt;/h2&gt;
+&lt;div&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; margin-left: 0; margin-right: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/d2a60/doublePointer.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 141.2162162162162%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAACXBIWXMAAAsSAAALEgHS3X78AAADbklEQVRIx31Vh3LiQAzl/7/t7jKTHKEYg3vBvYALRacnIoZwODuzY1srPz3VnTVNQ+M40jAMsvu+v+/T6URBEMjGd9d1onM8HuWJdb1e6XHNcFhVFZVlSUVR0OFwECBd+E6ShPb7/V12uVyExEtAMPQ8T7bv+8IGRrDO57MYybKM0jQVOQAgnwSEK6oEy/rEgot5nssGMJiCPc4nXdaDV6ttWwEKw5CiKKLVakWGsREZDL8ErOuaBqbf9wN1zPbIrOAa2CEc+HlnWRSEAYMZ5Ae+xHvS5bKq6W2+pT9/TXr7tCgtalYeBBBG8L5x1/T78xd9bN4pTAMaWN4P/WtAUPc5ETkz6Vjx6fyW1euFLNuisirpdD79nGXECVnMvzKpSrr1Z8l0kkoIsCaTAsU4jqUWkUVk/XkBxHEcQryhj9qcZIgyQFkADAwTZgGZMtTOwBmSgYzjfRJQ281xXAFdLJe05A0jOIN8Pp8LM3gBpliTgKB/Po3sdsRxTMl1HWkzyMEMHVTkXCYDl1bXUxRG956eKJuKtk5M87VNq21ASc51yYwVsOs72gVbWu4WtLKZeZVLwU+WzTjyRIkzstyQbD+m0+V7QsBm65iUFHtamgsum/HnLEtSEJ+yoDgKOXaZtJUqIr55lst7HO8lHE3b3CfSf4AoCSilaSa7Z8s6HPATEoU+hpue74kM+zEpj/vWywyCrGphqyKA8TPcBmvUq441BXxewrAsK5mDAMdAAICWBs6RacjBVKqCAfEsq4ayouK2ralqWiE2Q12hVFzHFhDPc5ltcU+IY+PMpbIoWc8VYG1HL8rpfWnRx9qlOGtuDMHMMC0ydw45fkSOF4j7iFmaJWTsDNraJrkhwGqRwxNNStcd79eDxBCz0I0KWpg+ra2YsrLlIu6ZxZWaY00Gj66tb5LpbXhWHhm0FVCNpU50eAVDUjaHFkoNW7hI4KEgDLgiMGGwwiCUXkYL6p0DHYQBMo2/3CmqiKdmUgeDXloYCmAkBDghugDyzWWA6NbZqNYrHqhgC6M6YSDXUquqW0xRq3dAbXS9yB+HLH4GOzDTGw/vYGRz9jGFcPXq0BVAAEBobDaUMRuUkbqEujNNU84RCnwDEAyruhbGIIFLTOM6gzUUrs47vSLBGnIAyaT+cl1jPspN2cs/MARAEPkHyTNvcdJPD94AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;doublePointer&quot;
+        title=&quot;doublePointer&quot;
+        src=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/fcda8/doublePointer.png&quot;
+        srcset=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/12f09/doublePointer.png 148w,
+/static/db82b8ee6d169c70c7390f8252584bb3/e4a3f/doublePointer.png 295w,
+/static/db82b8ee6d169c70c7390f8252584bb3/fcda8/doublePointer.png 590w,
+/static/db82b8ee6d169c70c7390f8252584bb3/d2a60/doublePointer.png 807w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;q_reverse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; next&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pre&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Sort queue(q_sort)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;參考&lt;a href=&quot;https://youtu.be/3k_tJa-f_4M?t=6020&quot;&gt;Linux 核心設計 : Code Review I (2020)&lt;/a&gt;實作 merge sort&lt;/li&gt;
+&lt;li&gt;在自己定義的 function 加上&lt;code class=&quot;language-text&quot;&gt;static&lt;/code&gt;，能夠讓編譯器知道這個 function 只在這個檔案中使用，能夠達到最佳化。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;q_sort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queue_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;q&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; q&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;tail&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;head&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;slow &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;fast&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;fast &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; head&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; fast &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; fast&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; fast &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; fast&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        slow &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; slow&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;mid &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; slow&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    slow&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mid&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;:::info
+透過 slow, fast 來找到中間的 node,並將 linked list 切斷。
+slow 每次走一步, fast 每次走兩步, 當 fast 到底時, slow 剛好在中間的位置。
+:::&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; true&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;iter&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; right&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;strcmp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;left&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; right&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            left &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; left&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; right&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            right &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; right&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;用範例理解執行過程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/tshYGOz.png&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;執行測試&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt;
+./qtest     &lt;span class=&quot;token comment&quot;&gt;# 進入cmd模式&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; new    &lt;span class=&quot;token comment&quot;&gt;# 建立queue&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; ih &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# insert head&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;cat&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; it dog &lt;span class=&quot;token comment&quot;&gt;# insert tail&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;cat dog&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; rh     &lt;span class=&quot;token comment&quot;&gt;# remove head&lt;/span&gt;
+Removed &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; from queue
+q &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;dog&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; it &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt;
+q &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;dog cat&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; it tom
+q &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;dog &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; tom&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; reverse
+q &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;tom &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; dog&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+cmd&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt;
+q &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;cat dog tom&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[CS50]]></title><description><![CDATA[Portal edX CS50’s Introduction to Computer Science
  cs50 中文討論區 fackbook groups CS50 CS50 IDE CS50 Docs CS50 Github Week 0 : Scratch…]]></description><link>https://moved0311.github.io/2021-03-03-CS0/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-03-CS0/</guid><pubDate>Wed, 03 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Portal&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://learning.edx.org/course/course-v1:HarvardX+CS50+X/home#block-v1:HarvardX+CS50+X+type@chapter+block@6f03d24800094666b5e522412d707ad7&quot;&gt;edX CS50’s Introduction to Computer Science
@@ -2984,15 +3261,12 @@ distance constrain&lt;br&gt;
 限制邀請來的人的最長距離&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Monotone Function&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;monotone increaing&lt;/li&gt;
 &lt;li&gt;monotone decresing&lt;/li&gt;
-&lt;div&gt;&lt;p&gt;non-monotone&lt;/p&gt;&lt;!-- 20170512,20170621--&gt;&lt;hr&gt;&lt;/div&gt;
-&lt;/ul&gt;&lt;!-- 20170421,20170621 --&gt;&lt;H1 id=&quot;3&quot;&gt;Link Prediction &lt;/H1&gt; 
-&gt; * &lt;a href=&quot;#LP&quot;&gt;Link Prediction&lt;/a&gt;
-* &lt;a href=&quot;#NSBM&quot;&gt;Node-wise Similarity Based Methods&lt;/a&gt;
-* &lt;a href=&quot;#TPBM&quot;&gt;Topological Pattern Based Methods&lt;/a&gt;
-* &lt;a href=&quot;#PMBM&quot;&gt;Probabilistic Model Based Methods&lt;/a&gt;&lt;h2 id=&quot;LP&quot;&gt; Link Prediction &lt;/h2&gt;
-__Goal__
-1. Predict the existence of links
-2. Predict the type of links&lt;p&gt;&lt;strong&gt;Strategies of Prediction&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;non-monotone&lt;/li&gt;
+&lt;/ul&gt;&lt;hr&gt;&lt;H1 id=&quot;3&quot;&gt;Link Prediction &lt;/H1&gt; 
+&lt;a href=&quot;#LP&quot;&gt;Link Prediction&lt;/a&gt; &lt;div&gt;&lt;a href=&quot;#NSBM&quot;&gt;Node-wise Similarity Based Methods&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;#TPBM&quot;&gt;Topological Pattern Based Methods&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;#PMBM&quot;&gt;Probabilistic Model Based Methods&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;Link Prediction&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Goal&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;Predict the existence of links&lt;/li&gt;
+&lt;li&gt;Predict the type of links&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;&lt;strong&gt;Strategies of Prediction&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;
 &lt;li&gt;Knowledge-driven strategy&lt;br&gt;
 專家系統(領域專家提供 rule)&lt;/li&gt;
 &lt;li&gt;Data-driven approach&lt;/li&gt;
@@ -3009,10 +3283,11 @@ __Goal__
 &lt;li&gt;Information retrieval&lt;/li&gt;
 &lt;li&gt;Clustering&lt;/li&gt;
 &lt;li&gt;Record linkage&lt;/li&gt;
-&lt;/ol&gt;&lt;h2 id=&quot;NSBM&quot;&gt; Node-wise Similarity Based Method&lt;/h2&gt;    
-&gt; 計算兩個點的相似度,如果兩個點很相似他們可能就有link  
-e.g. Similarity between words  
-觀察word的前後文字來判斷相似程度&lt;p&gt;&lt;strong&gt;Learning-Based Similarity Measure&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;
+&lt;/ol&gt;&lt;h2 id=&quot;NSBM&quot;&gt; Node-wise Similarity Based Method&lt;/h2&gt;    &lt;blockquote&gt;
+&lt;p&gt;計算兩個點的相似度,如果兩個點很相似他們可能就有link&lt;br&gt;
+e.g. Similarity between words&lt;br&gt;
+觀察word的前後文字來判斷相似程度&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;&lt;strong&gt;Learning-Based Similarity Measure&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Binary Classification Approach&lt;/p&gt;
 &lt;ul&gt;
@@ -3063,16 +3338,12 @@ x 走到 y,做 random work 的期望值作為比較條件&lt;/li&gt;
 &lt;li&gt;SimRank&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;&lt;h2 id=&quot;PMBM&quot;&gt; Probabilistic Model Based Methods &lt;/h2&gt; 
-relational Markov model  
-&lt;!-- 20170421,20170621 --&gt;&lt;hr&gt;
-&lt;!-- 20170621 --&gt; 
-&lt;h1 id=&quot;4&quot;&gt;Labeld Social Network &lt;/h1&gt; 
-#### Type of Labels  
-1. Binary
-2. Numeric  
-3. Categorical
-4. Free-text&lt;h4&gt;Goal&lt;/h4&gt;&lt;p&gt;給一個 network 且只有部份點有 labeled,用已知的 label 來預測未知的 label&lt;/p&gt;&lt;ol&gt;
+&lt;/ul&gt;&lt;h2 id=&quot;PMBM&quot;&gt; Probabilistic Model Based Methods &lt;/h2&gt; &lt;p&gt;relational Markov model  &lt;/p&gt;&lt;hr&gt;&lt;div&gt;Labeld Social Network &lt;/h1&gt;&lt;/div&gt;&lt;h4&gt;Type of Labels&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;Binary&lt;/li&gt;
+&lt;li&gt;Numeric  &lt;/li&gt;
+&lt;li&gt;Categorical&lt;/li&gt;
+&lt;li&gt;Free-text&lt;/li&gt;
+&lt;/ol&gt;&lt;h4&gt;Goal&lt;/h4&gt;&lt;p&gt;給一個 network 且只有部份點有 labeled,用已知的 label 來預測未知的 label&lt;/p&gt;&lt;ol&gt;
 &lt;li&gt;Predict the type of nodes&lt;/li&gt;
 &lt;li&gt;Predict the attribute values of nodes&lt;/li&gt;
 &lt;/ol&gt;&lt;h4&gt;Label Prediction&lt;/h4&gt;&lt;blockquote&gt;
@@ -3100,15 +3371,16 @@ within-network 拿全部資料做的 model 來做預測&lt;/li&gt;
 &lt;li&gt;
 &lt;div&gt;&lt;a href=&quot;#PEM&quot;&gt;Pseudolikelihood EM &lt;/a&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;/ul&gt;&lt;h2 id=&quot;RNC&quot;&gt; Relational Neighbor Classifier &lt;/h2&gt; 
-&gt; 看鄰居多數是什麼就判斷node是什麼&lt;ul&gt;
+&lt;/ul&gt;&lt;h2 id=&quot;RNC&quot;&gt; Relational Neighbor Classifier &lt;/h2&gt; &lt;blockquote&gt;
+&lt;p&gt;看鄰居多數是什麼就判斷node是什麼&lt;/p&gt;
+&lt;/blockquote&gt;&lt;ul&gt;
 &lt;li&gt;問題：&lt;br&gt;
 如果已知的點很少,unknown 的很多(Sparse label),若只用一個點判斷另一個點就沒那麼可靠&lt;/li&gt;
-&lt;div&gt;&lt;p&gt;解決：
+&lt;li&gt;解決：
 Iterative Relation Neighbor classifier&lt;br&gt;
 判斷分為好幾回合,若多數點是 unknown 那就判斷是 unknown&lt;br&gt;
-unknown 也視為一種 label&lt;/p&gt;&lt;!-- 20170621 --&gt;&lt;/div&gt;
-&lt;/ul&gt;&lt;!-- =====================  20170622 ================================= --&gt;&lt;h2 id=&quot;GE&quot;&gt;Ghost Edges for Node Label Prediction&lt;/h2&gt;   
+unknown 也視為一種 label&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 id=&quot;GE&quot;&gt;Ghost Edges for Node Label Prediction&lt;/h2&gt;   
 將沒有label的node用Ghost edge連到有label的node,有label的node就算沒有實體的edge連到unlabel node但是也可以造成影響。且影響力可以依據距離來做調整。&lt;h4&gt;Steady-state Probability&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;Markov Process&lt;br&gt;
 e.g. 城市和郊區遷移問題&lt;/li&gt;
@@ -3323,9 +3595,14 @@ SIR model&lt;/p&gt;&lt;ul&gt;
 &lt;/ul&gt;&lt;p&gt;參數&lt;/p&gt;&lt;ol&gt;
 &lt;li&gt;p 病情的傳染機率&lt;/li&gt;
 &lt;li&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;t_i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.76508em;vertical-align:-0.15em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.31166399999999994em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 病情的持續時間&lt;/li&gt;
-&lt;/ol&gt;&lt;!-- class --&gt;&lt;!-- 20170525 --&gt;&lt;h1 id=&quot;9&quot;&gt;Cloud computing&lt;/h1&gt;
-* &lt;a href=&quot;#9_1&quot;&gt;MapReduce&lt;/a&gt;
-* &lt;a href=&quot;#9_2&quot;&gt;Pig Programming&lt;/a&gt;&lt;p&gt;&lt;a href=&quot;http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf&quot;&gt;The NIST Definition of Cloud Computing&lt;/a&gt;&lt;/p&gt;&lt;ul&gt;
+&lt;/ol&gt;&lt;h1 id=&quot;9&quot;&gt;Cloud computing&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;div&gt;&lt;a href=&quot;#9_1&quot;&gt;MapReduce&lt;/a&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div&gt;&lt;a href=&quot;#9_2&quot;&gt;Pig Programming&lt;/a&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf&quot;&gt;The NIST Definition of Cloud Computing&lt;/a&gt;&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;Parallel&lt;/li&gt;
 &lt;li&gt;Distribute&lt;/li&gt;
 &lt;li&gt;Grid&lt;/li&gt;
