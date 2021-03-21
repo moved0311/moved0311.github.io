@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{eXYu:function(n,t,u){"use strict";u.r(t);t.default=function(){return"all tags"}}}]);
-//# sourceMappingURL=component---src-pages-tags-index-js-988e33a3f9a683634a2f.js.map

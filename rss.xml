@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 03 Mar 2021 09:57:47 GMT</lastBuildDate><item><title><![CDATA[CS50]]></title><description><![CDATA[Portal edX CS50’s Introduction to Computer Science
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 21 Mar 2021 06:51:52 GMT</lastBuildDate><item><title><![CDATA[CS50]]></title><description><![CDATA[Portal edX CS50’s Introduction to Computer Science
  cs50 中文討論區 fackbook groups CS50 CS50 IDE CS50 Docs CS50 Github Week 0 : Scratch…]]></description><link>https://moved0311.github.io/2021-03-03-CS0/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-03-CS0/</guid><pubDate>Wed, 03 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Portal&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://learning.edx.org/course/course-v1:HarvardX+CS50+X/home#block-v1:HarvardX+CS50+X+type@chapter+block@6f03d24800094666b5e522412d707ad7&quot;&gt;edX CS50’s Introduction to Computer Science
@@ -691,32 +691,7 @@ else:
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
-&lt;p&gt;在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
-&lt;p&gt;例如使用遞迴計算Fibonacci數列，使用遞迴的時間複雜度是指數級別(exponential)，使用DP則能夠降到線性(linear)。&lt;/p&gt;
-&lt;h3&gt;Fibonacci&lt;/h3&gt;
-&lt;p&gt;T(n) = T(n-1) + T(n-2) &lt;/p&gt;
-&lt;p&gt;若使用遞迴方法計算T(5)，下面T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)   
-                   /                  \
-               T(4)                     T(3)   
-             /        \              /       \ 
-        T(3)        T(2)           T(2)     T(1)
-       /    \       /    \        /    \
-    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
-  /     \
-T(1)   T(0)			&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Implements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為1時的結果，長度為2時的結果，…，長度為n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
+    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為1時的結果，長度為2時的結果，…，長度為n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
 &lt;p&gt;palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。&lt;/p&gt;
 &lt;h2&gt;計算在字串中有多少個回文&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;input: &amp;quot;abc&amp;quot;
@@ -958,6 +933,31 @@ output: 6 (&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&am
 &lt;h2&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/palindromic-substrings/&quot;&gt;leetcode - 647. Palindromic Substrings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
+&lt;p&gt;在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
+&lt;p&gt;例如使用遞迴計算Fibonacci數列，使用遞迴的時間複雜度是指數級別(exponential)，使用DP則能夠降到線性(linear)。&lt;/p&gt;
+&lt;h3&gt;Fibonacci&lt;/h3&gt;
+&lt;p&gt;T(n) = T(n-1) + T(n-2) &lt;/p&gt;
+&lt;p&gt;若使用遞迴方法計算T(5)，下面T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)   
+                   /                  \
+               T(4)                     T(3)   
+             /        \              /       \ 
+        T(3)        T(2)           T(2)     T(1)
+       /    \       /    \        /    \
+    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
+  /     \
+T(1)   T(0)			&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Implements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Kruslal's Minimum Spanning Tree]]></title><description><![CDATA[Minimum Spanning Tree (最小生成樹) 所有節點都要連通，且邊的權重總和最低。 邊的數量為節點數-1 Kruskal’s Algorithms 步驟： 將所有邊依照權重(weight)做排序 將邊依序由權重小至大加入到圖中，若加入的邊產生迴圈(cycle…]]></description><link>https://moved0311.github.io/2020-09-13-kruskal/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-13-kruskal/</guid><pubDate>Sun, 13 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Minimum Spanning Tree (最小生成樹)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;所有節點都要連通，且邊的權重總和最低。&lt;/li&gt;
@@ -1867,94 +1867,7 @@ create-react-app new-to-maskmap
 &lt;li&gt;&lt;a href=&quot;https://data.gov.tw/dataset/39284&quot;&gt;健保特約醫事機構-藥局&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://leafletjs.com/&quot;&gt;Leaflet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://wiki.openstreetmap.org/wiki/Tiles&quot;&gt;OpenStreet Map&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Linked List]]></title><description><![CDATA[LinkListlinklist reverse]]></description><link>https://moved0311.github.io/2017-03-27-linkedList/</link><guid isPermaLink="false">https://moved0311.github.io/2017-03-27-linkedList/</guid><pubDate>Mon, 27 Mar 2017 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;LinkList&lt;/h2&gt;
-&lt;ul&gt;
-&lt;div&gt;&lt;div&gt;&lt;strong&gt;linklist reverse&lt;/strong&gt;&lt;br&gt;
-&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 458px; margin-left: 0; margin-right: 0;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/04be638aaf49442002854e0905b4a30d/f7a31/linkListReverse.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAAsSAAALEgHS3X78AAABlUlEQVQoz42S626CQBCFef8HM1HAahvQhWW51AaWyy5XQUDpiTT0R2N1QzYnE2bnmzOjjOPIeTRNU5alNqWXy+V2uyGICO7r9QqBG8E5MgscCEVKsVqtyqqSIqXUwbff76jDCCEf73vLpoQcNVVzGHOores6Y67L2Ntu5ziO0vd9WZZ4GzWLomiapshzRCDw7iyyNKuq6nw+J0lS13XXdVVV4lbGcRAiA4aU0mXuMAx5LuMknV44Sl7IzUat6yaOY5D4vm8ahud50GBZ2ptbXRr+SW7bNggCFARhFEWojzuJEyHE7NZ/lWEg/ru7nVFK8QpsDzl/CRsNr9cbVVNd1wUzwE6fgef5pmku2A+Th6EH6jCMd3tzhIDt+T7aeV55UZgZyCHCMLQs+yVs+GQeDoZhwDbMH6Gv0wluQ/dPsTF9+MQ5xwLwu09JHIMck1t28zk2NgbAEEibnYuiEGv7d7y/yXBL0zV9u2UOs22KELb4cDxaxNI0jRALXA+Tu66NIl7VNRZ7NiyXMhMCmwwEPA3bHyV/A/UhWaBjnuOiAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;linkListReverse&quot;
-        title=&quot;linkListReverse&quot;
-        src=&quot;/static/04be638aaf49442002854e0905b4a30d/f7a31/linkListReverse.png&quot;
-        srcset=&quot;/static/04be638aaf49442002854e0905b4a30d/12f09/linkListReverse.png 148w,
-/static/04be638aaf49442002854e0905b4a30d/e4a3f/linkListReverse.png 295w,
-/static/04be638aaf49442002854e0905b4a30d/f7a31/linkListReverse.png 458w&quot;
-        sizes=&quot;(max-width: 458px) 100vw, 458px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/div&gt;&lt;!--more--&gt;&lt;/div&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; linkListReverse&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; val&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; val&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;val &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; val&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; val&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; node &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;val&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-                tail&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-                tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-                head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-                tail &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;iter &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;iter&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;val&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot; -&gt; &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-                iter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; iter&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;null&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; current &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; head&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-               next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; current&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-               current&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pre&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-               pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; current&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-               current &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; next&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; pre&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;before reverse:&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt; reverseHead &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;After reverse:&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token class-name&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;reverseHead&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[WebSearching]]></title><description><![CDATA[相關程度 benchmark 資料集 benchmark queries(問句) 文章是否相關的標記(ground truths) queries 和 information need 有落差
+&lt;/ul&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[WebSearching]]></title><description><![CDATA[相關程度 benchmark 資料集 benchmark queries(問句) 文章是否相關的標記(ground truths) queries 和 information need 有落差
 想找的東西,不會下 key word Precision (P) Precision…]]></description><link>https://moved0311.github.io/2017-03-07-webSearching/</link><guid isPermaLink="false">https://moved0311.github.io/2017-03-07-webSearching/</guid><pubDate>Tue, 07 Mar 2017 00:00:00 GMT</pubDate><content:encoded>&lt;div&gt;&lt;hr&gt;
 課本: [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)&lt;hr&gt;
 # CH8 Evaluation in information retrival      
