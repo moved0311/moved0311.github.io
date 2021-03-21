@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 21 Mar 2021 20:34:10 GMT</lastBuildDate><item><title><![CDATA[Linux 核心設計 2021q1 Homework1 (lab0)]]></title><description><![CDATA[作業說明 課程連結 J01: lab0 取得作業程式碼sysprog21/lab0-c 作業目標 透過 linked list 實作 queue 的各種操作方法 new queue free queue insert head insert tail remove head…]]></description><link>https://moved0311.github.io/2021-03-22-linux-lab0-c/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-22-linux-lab0-c/</guid><pubDate>Mon, 22 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;作業說明&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 21 Mar 2021 20:44:38 GMT</lastBuildDate><item><title><![CDATA[Linux 核心設計 2021q1 Homework1 (lab0)]]></title><description><![CDATA[作業說明 課程連結 J01: lab0 取得作業程式碼sysprog21/lab0-c 作業目標 透過 linked list 實作 queue 的各種操作方法 new queue free queue insert head insert tail remove head…]]></description><link>https://moved0311.github.io/2021-03-22-linux-lab0-c/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-22-linux-lab0-c/</guid><pubDate>Mon, 22 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;作業說明&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://wiki.csie.ncku.edu.tw/linux/schedule&quot;&gt;課程連結&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://hackmd.io/@sysprog/linux2021-lab0&quot;&gt;J01: lab0&lt;/a&gt;&lt;/li&gt;
@@ -154,29 +154,28 @@
 &lt;h2&gt;Reverse queue (q_reverse)&lt;/h2&gt;
 &lt;div&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; margin-left: 0; margin-right: 0;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 553px; margin-left: 0; margin-right: 0;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/d2a60/doublePointer.png&quot;
+    href=&quot;/static/2709949bb4af684b74839373b9be377b/74cfa/reverseLinkedList.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 141.2162162162162%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAACXBIWXMAAAsSAAALEgHS3X78AAADbklEQVRIx31Vh3LiQAzl/7/t7jKTHKEYg3vBvYALRacnIoZwODuzY1srPz3VnTVNQ+M40jAMsvu+v+/T6URBEMjGd9d1onM8HuWJdb1e6XHNcFhVFZVlSUVR0OFwECBd+E6ShPb7/V12uVyExEtAMPQ8T7bv+8IGRrDO57MYybKM0jQVOQAgnwSEK6oEy/rEgot5nssGMJiCPc4nXdaDV6ttWwEKw5CiKKLVakWGsREZDL8ErOuaBqbf9wN1zPbIrOAa2CEc+HlnWRSEAYMZ5Ae+xHvS5bKq6W2+pT9/TXr7tCgtalYeBBBG8L5x1/T78xd9bN4pTAMaWN4P/WtAUPc5ETkz6Vjx6fyW1euFLNuisirpdD79nGXECVnMvzKpSrr1Z8l0kkoIsCaTAsU4jqUWkUVk/XkBxHEcQryhj9qcZIgyQFkADAwTZgGZMtTOwBmSgYzjfRJQ281xXAFdLJe05A0jOIN8Pp8LM3gBpliTgKB/Po3sdsRxTMl1HWkzyMEMHVTkXCYDl1bXUxRG956eKJuKtk5M87VNq21ASc51yYwVsOs72gVbWu4WtLKZeZVLwU+WzTjyRIkzstyQbD+m0+V7QsBm65iUFHtamgsum/HnLEtSEJ+yoDgKOXaZtJUqIr55lst7HO8lHE3b3CfSf4AoCSilaSa7Z8s6HPATEoU+hpue74kM+zEpj/vWywyCrGphqyKA8TPcBmvUq441BXxewrAsK5mDAMdAAICWBs6RacjBVKqCAfEsq4ayouK2ralqWiE2Q12hVFzHFhDPc5ltcU+IY+PMpbIoWc8VYG1HL8rpfWnRx9qlOGtuDMHMMC0ydw45fkSOF4j7iFmaJWTsDNraJrkhwGqRwxNNStcd79eDxBCz0I0KWpg+ra2YsrLlIu6ZxZWaY00Gj66tb5LpbXhWHhm0FVCNpU50eAVDUjaHFkoNW7hI4KEgDLgiMGGwwiCUXkYL6p0DHYQBMo2/3CmqiKdmUgeDXloYCmAkBDghugDyzWWA6NbZqNYrHqhgC6M6YSDXUquqW0xRq3dAbXS9yB+HLH4GOzDTGw/vYGRz9jGFcPXq0BVAAEBobDaUMRuUkbqEujNNU84RCnwDEAyruhbGIIFLTOM6gzUUrs47vSLBGnIAyaT+cl1jPspN2cs/MARAEPkHyTNvcdJPD94AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 122.97297297297298%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAYAAAAxFw7TAAAACXBIWXMAABJ0AAASdAHeZh94AAACa0lEQVQ4y4WVyY4CMQxE+///CnFAQgjBgRNi33eafc/oWapgmp4ZS62YJK6UXYlJXq9XwM7ns33r9Trc73ebOxwO4Xa7mc++vE9rskQ/BoNB2G63od1uGzDW6/VCmqbBmw/OA4+Aj8cjLBYLA5HB9nQ6mQ9TsWXv9XoNWQMr8ejz+Tx0u92w2+3CarUKs9nMQPk2m43NkwW/KQe/8afTqR1iDH0abBKz4XAYLpeLzY1GI5vb7/d2CJnAnDkyqlQqkXHiC3s8HsN4PDYgDAZKmdGnz15fz4+UMaXKKFHw/xIFez6f9kVRtABl6tPv9+Nm6ihwBQpU/hdDAqgJgKTbarUsHdKeTCZRacA5EJ8R5ioDe6IobCyXyyYCPgYgYsCCgE6nY+XgcPaJACMESqXSWxRPmUlAOR36MOS6YATrQA7hgGzaURToahF2vBqU5NVwNzFdnawRR/yXKHoBeg2wQSBdleVyaffw35cCdepAoUkPhrDChxHpE8wcoOzjMMD1oqixGkpCQKPRiAEwRG18dSDm5PPM1JEYKU+9Xo+ZfaTMJqkLfbUzWHEIdcSy9/UjZYIBylNMisIeQIlCuhKLehKfK0qWIYGMpNNsNuMzBFiAXwwparVatdqohqSmy0t38d2GMiAG4Oo2tVrtXUNU5fazSSpLTdjiC4DPC8Re1hAmqpy9pP5+4au2+NSLQyBACTiU1AH+9aXkmW9ZpE2qlAS26uQR0AfSYXSROQSf1NiIry5EXWEpxkrXAFksFotWXE7FuGOIBGsahLq4RMDnA5D1QqHw7jZMctcY9awYJQ4g6pn+v4Q1gfrO8wNK4o9Jib+wRgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;doublePointer&quot;
-        title=&quot;doublePointer&quot;
-        src=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/fcda8/doublePointer.png&quot;
-        srcset=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/12f09/doublePointer.png 148w,
-/static/db82b8ee6d169c70c7390f8252584bb3/e4a3f/doublePointer.png 295w,
-/static/db82b8ee6d169c70c7390f8252584bb3/fcda8/doublePointer.png 590w,
-/static/db82b8ee6d169c70c7390f8252584bb3/d2a60/doublePointer.png 807w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        alt=&quot;reverseLinkedList&quot;
+        title=&quot;reverseLinkedList&quot;
+        src=&quot;/static/2709949bb4af684b74839373b9be377b/74cfa/reverseLinkedList.png&quot;
+        srcset=&quot;/static/2709949bb4af684b74839373b9be377b/12f09/reverseLinkedList.png 148w,
+/static/2709949bb4af684b74839373b9be377b/e4a3f/reverseLinkedList.png 295w,
+/static/2709949bb4af684b74839373b9be377b/74cfa/reverseLinkedList.png 553w&quot;
+        sizes=&quot;(max-width: 553px) 100vw, 553px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -225,10 +224,10 @@
 
     &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mid&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;:::info
-透過 slow, fast 來找到中間的 node,並將 linked list 切斷。
-slow 每次走一步, fast 每次走兩步, 當 fast 到底時, slow 剛好在中間的位置。
-:::&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;透過 slow, fast 來找到中間的 node,並將 linked list 切斷。&lt;br&gt;
+slow 每次走一步, fast 每次走兩步, 當 fast 到底時, slow 剛好在中間的位置。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     list_ele_t &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -256,7 +255,36 @@ slow 每次走一步, fast 每次走兩步, 當 fast 到底時, slow 剛好在�
 &lt;ul&gt;
 &lt;li&gt;用範例理解執行過程&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/tshYGOz.png&quot;&gt;&lt;/p&gt;
+&lt;div&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; margin-left: 0; margin-right: 0;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/d2a60/doublePointer.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 141.2162162162162%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAACXBIWXMAAAsSAAALEgHS3X78AAADbklEQVRIx31Vh3LiQAzl/7/t7jKTHKEYg3vBvYALRacnIoZwODuzY1srPz3VnTVNQ+M40jAMsvu+v+/T6URBEMjGd9d1onM8HuWJdb1e6XHNcFhVFZVlSUVR0OFwECBd+E6ShPb7/V12uVyExEtAMPQ8T7bv+8IGRrDO57MYybKM0jQVOQAgnwSEK6oEy/rEgot5nssGMJiCPc4nXdaDV6ttWwEKw5CiKKLVakWGsREZDL8ErOuaBqbf9wN1zPbIrOAa2CEc+HlnWRSEAYMZ5Ae+xHvS5bKq6W2+pT9/TXr7tCgtalYeBBBG8L5x1/T78xd9bN4pTAMaWN4P/WtAUPc5ETkz6Vjx6fyW1euFLNuisirpdD79nGXECVnMvzKpSrr1Z8l0kkoIsCaTAsU4jqUWkUVk/XkBxHEcQryhj9qcZIgyQFkADAwTZgGZMtTOwBmSgYzjfRJQ281xXAFdLJe05A0jOIN8Pp8LM3gBpliTgKB/Po3sdsRxTMl1HWkzyMEMHVTkXCYDl1bXUxRG956eKJuKtk5M87VNq21ASc51yYwVsOs72gVbWu4WtLKZeZVLwU+WzTjyRIkzstyQbD+m0+V7QsBm65iUFHtamgsum/HnLEtSEJ+yoDgKOXaZtJUqIr55lst7HO8lHE3b3CfSf4AoCSilaSa7Z8s6HPATEoU+hpue74kM+zEpj/vWywyCrGphqyKA8TPcBmvUq441BXxewrAsK5mDAMdAAICWBs6RacjBVKqCAfEsq4ayouK2ralqWiE2Q12hVFzHFhDPc5ltcU+IY+PMpbIoWc8VYG1HL8rpfWnRx9qlOGtuDMHMMC0ydw45fkSOF4j7iFmaJWTsDNraJrkhwGqRwxNNStcd79eDxBCz0I0KWpg+ra2YsrLlIu6ZxZWaY00Gj66tb5LpbXhWHhm0FVCNpU50eAVDUjaHFkoNW7hI4KEgDLgiMGGwwiCUXkYL6p0DHYQBMo2/3CmqiKdmUgeDXloYCmAkBDghugDyzWWA6NbZqNYrHqhgC6M6YSDXUquqW0xRq3dAbXS9yB+HLH4GOzDTGw/vYGRz9jGFcPXq0BVAAEBobDaUMRuUkbqEujNNU84RCnwDEAyruhbGIIFLTOM6gzUUrs47vSLBGnIAyaT+cl1jPspN2cs/MARAEPkHyTNvcdJPD94AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;doublePointer&quot;
+        title=&quot;doublePointer&quot;
+        src=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/fcda8/doublePointer.png&quot;
+        srcset=&quot;/static/db82b8ee6d169c70c7390f8252584bb3/12f09/doublePointer.png 148w,
+/static/db82b8ee6d169c70c7390f8252584bb3/e4a3f/doublePointer.png 295w,
+/static/db82b8ee6d169c70c7390f8252584bb3/fcda8/doublePointer.png 590w,
+/static/db82b8ee6d169c70c7390f8252584bb3/d2a60/doublePointer.png 807w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/div&gt;
 &lt;h2&gt;執行測試&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt;
 ./qtest     &lt;span class=&quot;token comment&quot;&gt;# 進入cmd模式&lt;/span&gt;
