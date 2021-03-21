@@ -380,18 +380,22 @@ distance constrain
 - monotone increaing
 - monotone decresing
 - non-monotone
-  <!-- 20170512,20170621-->
-  <hr>
 
-<!-- 20170421,20170621 -->
+---
+ 
 <H1 id="3">Link Prediction </H1> 
-> * <a href="#LP">Link Prediction</a>
-* <a href="#NSBM">Node-wise Similarity Based Methods</a>
-* <a href="#TPBM">Topological Pattern Based Methods</a>
-* <a href="#PMBM">Probabilistic Model Based Methods</a>
+<a href="#LP">Link Prediction</a> 
 
-<h2 id="LP"> Link Prediction </h2>
-__Goal__
+<a href="#NSBM">Node-wise Similarity Based Methods</a>
+
+<a href="#TPBM">Topological Pattern Based Methods</a>
+
+<a href="#PMBM">Probabilistic Model Based Methods</a>
+
+## Link Prediction
+
+**Goal**
+
 1. Predict the existence of links
 2. Predict the type of links
 
@@ -419,6 +423,7 @@ __Goal__
 5. Record linkage
 
 <h2 id="NSBM"> Node-wise Similarity Based Method</h2>    
+
 > 計算兩個點的相似度,如果兩個點很相似他們可能就有link  
 e.g. Similarity between words  
 觀察word的前後文字來判斷相似程度
@@ -468,12 +473,12 @@ e.g. Similarity between words
   - SimRank
 
 <h2 id="PMBM"> Probabilistic Model Based Methods </h2> 
+
 relational Markov model  
-<!-- 20170421,20170621 -->
 
 <hr>
-<!-- 20170621 --> 
-<h1 id="4">Labeld Social Network </h1> 
+
+####Labeld Social Network </h1> 
 #### Type of Labels  
 1. Binary
 2. Numeric  
@@ -511,6 +516,7 @@ relational Markov model
 - <a href="#PEM">Pseudolikelihood EM </a>
 
 <h2 id="RNC"> Relational Neighbor Classifier </h2> 
+
 > 看鄰居多數是什麼就判斷node是什麼
 
 - 問題：  
@@ -519,9 +525,6 @@ relational Markov model
 Iterative Relation Neighbor classifier  
  判斷分為好幾回合,若多數點是 unknown 那就判斷是 unknown  
  unknown 也視為一種 label
-<!-- 20170621 -->
-
-<!-- =====================  20170622 ================================= -->
 
 <h2 id="GE">Ghost Edges for Node Label Prediction</h2>   
 將沒有label的node用Ghost edge連到有label的node,有label的node就算沒有實體的edge連到unlabel node但是也可以造成影響。且影響力可以依據距離來做調整。
@@ -760,10 +763,8 @@ SIR model
 1. p 病情的傳染機率
 2. $t_i$ 病情的持續時間
 
-<!-- class -->
-
-<!-- 20170525 -->
 <h1 id="9">Cloud computing</h1>
+
 * <a href="#9_1">MapReduce</a>
 * <a href="#9_2">Pig Programming</a>
 
