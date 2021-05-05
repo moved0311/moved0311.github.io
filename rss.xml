@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 21 Mar 2021 20:44:38 GMT</lastBuildDate><item><title><![CDATA[Linux 核心設計 2021q1 Homework1 (lab0)]]></title><description><![CDATA[作業說明 課程連結 J01: lab0 取得作業程式碼sysprog21/lab0-c 作業目標 透過 linked list 實作 queue 的各種操作方法 new queue free queue insert head insert tail remove head…]]></description><link>https://moved0311.github.io/2021-03-22-linux-lab0-c/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-22-linux-lab0-c/</guid><pubDate>Mon, 22 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;作業說明&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 May 2021 17:09:21 GMT</lastBuildDate><item><title><![CDATA[Linux 核心設計 2021q1 Homework1 (lab0)]]></title><description><![CDATA[作業說明 課程連結 J01: lab0 取得作業程式碼sysprog21/lab0-c 作業目標 透過 linked list 實作 queue 的各種操作方法 new queue free queue insert head insert tail remove head…]]></description><link>https://moved0311.github.io/2021-03-22-linux-lab0-c/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-22-linux-lab0-c/</guid><pubDate>Mon, 22 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;作業說明&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://wiki.csie.ncku.edu.tw/linux/schedule&quot;&gt;課程連結&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://hackmd.io/@sysprog/linux2021-lab0&quot;&gt;J01: lab0&lt;/a&gt;&lt;/li&gt;
@@ -996,7 +996,32 @@ else:
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為1時的結果，長度為2時的結果，…，長度為n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
+    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
+&lt;p&gt;在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
+&lt;p&gt;例如使用遞迴計算Fibonacci數列，使用遞迴的時間複雜度是指數級別(exponential)，使用DP則能夠降到線性(linear)。&lt;/p&gt;
+&lt;h3&gt;Fibonacci&lt;/h3&gt;
+&lt;p&gt;T(n) = T(n-1) + T(n-2) &lt;/p&gt;
+&lt;p&gt;若使用遞迴方法計算T(5)，下面T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)   
+                   /                  \
+               T(4)                     T(3)   
+             /        \              /       \ 
+        T(3)        T(2)           T(2)     T(1)
+       /    \       /    \        /    \
+    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
+  /     \
+T(1)   T(0)			&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Implements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為1時的結果，長度為2時的結果，…，長度為n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
 &lt;p&gt;palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。&lt;/p&gt;
 &lt;h2&gt;計算在字串中有多少個回文&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;input: &amp;quot;abc&amp;quot;
@@ -1238,31 +1263,6 @@ output: 6 (&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&am
 &lt;h2&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/palindromic-substrings/&quot;&gt;leetcode - 647. Palindromic Substrings&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
-&lt;p&gt;在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
-&lt;p&gt;例如使用遞迴計算Fibonacci數列，使用遞迴的時間複雜度是指數級別(exponential)，使用DP則能夠降到線性(linear)。&lt;/p&gt;
-&lt;h3&gt;Fibonacci&lt;/h3&gt;
-&lt;p&gt;T(n) = T(n-1) + T(n-2) &lt;/p&gt;
-&lt;p&gt;若使用遞迴方法計算T(5)，下面T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)   
-                   /                  \
-               T(4)                     T(3)   
-             /        \              /       \ 
-        T(3)        T(2)           T(2)     T(1)
-       /    \       /    \        /    \
-    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
-  /     \
-T(1)   T(0)			&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Implements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Kruslal's Minimum Spanning Tree]]></title><description><![CDATA[Minimum Spanning Tree (最小生成樹) 所有節點都要連通，且邊的權重總和最低。 邊的數量為節點數-1 Kruskal’s Algorithms 步驟： 將所有邊依照權重(weight)做排序 將邊依序由權重小至大加入到圖中，若加入的邊產生迴圈(cycle…]]></description><link>https://moved0311.github.io/2020-09-13-kruskal/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-13-kruskal/</guid><pubDate>Sun, 13 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Minimum Spanning Tree (最小生成樹)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;所有節點都要連通，且邊的權重總和最低。&lt;/li&gt;
