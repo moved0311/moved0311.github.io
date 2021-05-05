@@ -11,6 +11,7 @@ module.exports = {
       github: `https://github.com/moved0311`,
       twitter: "taiyi_",
       facebook: "https://www.facebook.com/profile.php?id=100000329876068",
+      linkedin: "https://www.linkedin.com/in/jiang-taiyi-7854ba205/",
     },
   },
   plugins: [

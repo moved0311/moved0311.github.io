@@ -15,7 +15,7 @@ const Link = styled.a`
   color: white;
 `
 const CommunityContainer = styled.div`
-  width: 120px;
+  width: 150px;
   height: 32px;
   justify-content: space-between;
   display: flex;
@@ -39,6 +39,13 @@ const Contact = () => {
           }
         }
       }
+      linkedin: file(absolutePath: { regex: "/linkedin.png/" }) {
+        childImageSharp {
+          fixed(width: 32, height: 32) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       cv: file(absolutePath: { regex: "/cv.png/" }) {
         childImageSharp {
           fixed(width: 32, height: 32) {
@@ -55,6 +62,7 @@ const Contact = () => {
           social {
             github
             facebook
+            linkedin
           }
         }
       }
@@ -70,6 +78,9 @@ const Contact = () => {
         </Link>
         <Link href={social.facebook} target="_blank">
           <Image fixed={data.facebook.childImageSharp.fixed} />
+        </Link>
+        <Link href={social.linkedin} target="_blank">
+          <Image fixed={data.linkedin.childImageSharp.fixed} />
         </Link>
         <Link href="resume.pdf" target="_blank">
           <Image fixed={data.cv.childImageSharp.fixed} />
