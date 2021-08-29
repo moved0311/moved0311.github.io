@@ -5,7 +5,7 @@ import Bio from "../components/bio"
 import Contact from "../components/contact"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Tag from "../components/tag"
+import Tag from "../components/tags/tag"
 import Categories from "../components/categories"
 import { rhythm } from "../utils/typography"
 import _ from "lodash"
@@ -23,8 +23,9 @@ const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         const tags = _.get(node, "frontmatter.tags", [])
+        const isDraft = node.frontmatter.draft
         return (
-          <article key={node.fields.slug}>
+          <article key={node.fields.slug} hidden={isDraft}>
             <header>
               <h3
                 style={{
@@ -74,6 +75,7 @@ export const pageQuery = graphql`
             title
             description
             tags
+            draft
           }
         }
       }

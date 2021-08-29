@@ -19,7 +19,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: "Course" } } }
+      filter: { frontmatter: { tags: { in: "DP" } } }
     ) {
       edges {
         node {
