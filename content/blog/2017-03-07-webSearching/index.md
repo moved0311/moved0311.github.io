@@ -5,12 +5,16 @@ tags: ["學校課程"]
 ---
 
 <hr>
-課本: [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
+
+課本: [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book)
 
 <hr>
-# CH8 Evaluation in information retrival      
-評量search engine好壞
-1. 搜到的index
+
+# CH8 Evaluation in information retrival
+
+評量 search engine 好壞
+
+1. 搜到的 index
 2. 搜尋速度
 3. 二氧化碳排放量
 4. 和搜尋相關程度
@@ -171,9 +175,11 @@ Kappa 計算公式
   底下多的連結
 
 <hr>
-# CH6 Model    
-* Vector Space Model
-* Probabilistic Information Retrieval
+
+# CH6 Model
+
+- Vector Space Model
+- Probabilistic Information Retrieval
 
 |Empirical IR | Model-based IR|
 |暴力法|有理論模型|
@@ -447,7 +453,9 @@ $$\sum log( \frac{總文章數 - 某個字出現在文章次數 + 0.5}{某個字
 改善後的最終公式稱作**BM25**
 
 <hr>
+
 <!-- 20170416 -->
+
 # CH12 Language models for information retrieval
 
 **unigram language model**
@@ -520,11 +528,13 @@ smooth 方法
 
 <!-- class -->
 <hr>
-# CH13 Text Classification and Naive Bayes  
-* Text Classification
-* Naive Bayes
-* Naive Bayes Theory
-* Evaluation of Text Classification
+
+# CH13 Text Classification and Naive Bayes
+
+- Text Classification
+- Naive Bayes
+- Naive Bayes Theory
+- Evaluation of Text Classification
 
 #### Text Classification
 
@@ -776,7 +786,7 @@ $K(x_i,x_j)=x_i^Tx_j$
 #### Common kernels
 
 - Linear
-- Polynomial \\\\\\\\\\$\$
+- Polynomial \\\\\\\\\\\\\\\\$\$
 - Radial basis function(infinite dimensional space)
   <!---------------------------- class -------------------------------------------->
   <!---------------------------- class -------------------------------------------->

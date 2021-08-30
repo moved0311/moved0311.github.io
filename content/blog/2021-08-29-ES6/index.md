@@ -94,7 +94,7 @@ let name = "Tom"
 let template = `Hello, ${name}.` // "Hello, Tom."
 ```
 
-### 5. desturcuting
+### 5. destructuring
 
 在拆解陣列或是物件時更方便
 
@@ -188,9 +188,65 @@ a() // a.js
 
 ### 11. map/set/weakmap/weakset
 
+- map / [weakmap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+
+  Map 的 key 值可以是任意型態(int, string, array) \
+  WeakMap 的 key 值只能是物件
+
+```js
+let map = new Map()
+map.set(1, "1")
+map.set("a", "a")
+map.set(["arr1"], ["arr2"])
+map // {1 => "1", "a" => "a", ["arr1"] => ["arr2"]}
+
+let weakmap = new WeakMap()
+weakmap.set(1, "1")
+// Uncaught TypeError: Invalid value used as weak map key
+weakmap.set("a", "a")
+// Uncaught TypeError: Invalid value used as weak map key
+weakmap.set(["arr1"], ["arr2"]) // {["arr1"] => ["arr2"]}
+```
+
+- set / [weakset](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+
+Set 與 WeakSet 差異: Set 能夠儲存隨意型態(int, string, array), WeakSet 只能夠儲存物件。
+
+```js
+let set = new Set()
+set.add(1).add(2).add(5) // {1, 2, 5}
+set.add(2) // {1, 2, 5}
+set.add("2") // // {1, 2, 5, "2"}
+set.add([1, 2, 3]) // {1, 2, 5, "2", [1,2,3]}
+set.size // 5
+
+let weakset = new WeakSet()
+weakset.add(1)
+// Uncaught TypeError: Invalid value used in weak set
+weakset.add([1, 2, 3]) // {[1,2,3]}
+weakset.add([1, 2, 3]) // {[1,2,3], [1,2,3]}
+```
+
 ### 12. proxying/refection
 
 ### 13. symbols
+
+symbol 是 ES6 新增的一種基本數據型態(primitive data type)。\
+基本型態有七種: string，number，bigint，boolean，null，undefined，symbol。\
+特性: **唯一**且不可改變(immutable)的資料型態，可用來識別物件的屬性。
+
+```js
+let a = Symbol("123")
+let b = Symbol("123")
+a === b // false
+```
+
+```js
+let a = Symbol("aaa")
+let b = Symbol("bbb")
+let obj = { [a]: 123, [b]: 456 }
+obj // {Symbol(aaa): 123, Symbol(bbb): 456}
+```
 
 ### 14. promises
 
@@ -226,3 +282,12 @@ callServer(400)
 0b111 //7
 0o123 //83
 ```
+
+```js
+let num = "1010"
+let binNum = `0b${num}`
+let decNum = BigInt(binNum) // 10n
+decNum.toString(2) // "1010"
+```
+
+- [Leetcode #67](https://leetcode.com/problems/add-binary/)
