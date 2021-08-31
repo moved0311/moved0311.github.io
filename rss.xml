@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 29 Aug 2021 19:42:07 GMT</lastBuildDate><item><title><![CDATA[ES10(ES2019)]]></title><description><![CDATA[(施工中…)]]></description><link>https://moved0311.github.io/2021-08-29-ES10/</link><guid isPermaLink="false">https://moved0311.github.io/2021-08-29-ES10/</guid><pubDate>Sun, 29 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;(施工中…)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ES11(ES2020)]]></title><description><![CDATA[1. String.prototype.matchAll 2. import() 3. BigInt 遇到類似Leetcode 1985這類問題，
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 31 Aug 2021 08:10:53 GMT</lastBuildDate><item><title><![CDATA[ES10(ES2019)]]></title><description><![CDATA[(施工中…)]]></description><link>https://moved0311.github.io/2021-08-29-ES10/</link><guid isPermaLink="false">https://moved0311.github.io/2021-08-29-ES10/</guid><pubDate>Sun, 29 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;(施工中…)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ES11(ES2020)]]></title><description><![CDATA[1. String.prototype.matchAll 2. import() 3. BigInt 遇到類似Leetcode 1985這類問題，
 Number 型態已經不足夠表示。Number 型態表示上限為。 4. Promise.allSettled…]]></description><link>https://moved0311.github.io/2021-08-29-ES11/</link><guid isPermaLink="false">https://moved0311.github.io/2021-08-29-ES11/</guid><pubDate>Sun, 29 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;1. String.prototype.matchAll&lt;/h3&gt;
 &lt;h3&gt;2. import()&lt;/h3&gt;
 &lt;h3&gt;3. BigInt&lt;/h3&gt;
@@ -80,7 +80,7 @@ s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&q
 &lt;p&gt;允許在字串中插入變數，不用像以前一樣做字串串接。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Tom&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; template &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Hello, &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;name&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// &quot;Hello, Tom.&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;5. desturcuting&lt;/h3&gt;
+&lt;h3&gt;5. destructuring&lt;/h3&gt;
 &lt;p&gt;在拆解陣列或是物件時更方便&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; num &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; c&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; num &lt;span class=&quot;token comment&quot;&gt;// a = 1, b = 2, c = 3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -145,8 +145,53 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; a &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./a&quot;&lt;/span&gt;
 &lt;span class=&quot;token function&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// a.js&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;11. map/set/weakmap/weakset&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;map / &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap&quot;&gt;weakmap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Map 的 key 值可以是任意型態(int, string, array) &lt;br&gt;
+WeakMap 的 key 值只能是物件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; map &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+map&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+map&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+map&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;arr1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;arr2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+map &lt;span class=&quot;token comment&quot;&gt;// {1 =&gt; &quot;1&quot;, &quot;a&quot; =&gt; &quot;a&quot;, [&quot;arr1&quot;] =&gt; [&quot;arr2&quot;]}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; weakmap &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WeakMap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+weakmap&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Uncaught TypeError: Invalid value used as weak map key&lt;/span&gt;
+weakmap&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Uncaught TypeError: Invalid value used as weak map key&lt;/span&gt;
+weakmap&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;arr1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;arr2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {[&quot;arr1&quot;] =&gt; [&quot;arr2&quot;]}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;set / &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet&quot;&gt;weakset&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Set 與 WeakSet 差異: Set 能夠儲存隨意型態(int, string, array), WeakSet 只能夠儲存物件。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {1, 2, 5}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {1, 2, 5}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// // {1, 2, 5, &quot;2&quot;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {1, 2, 5, &quot;2&quot;, [1,2,3]}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;size &lt;span class=&quot;token comment&quot;&gt;// 5&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; weakset &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WeakSet&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+weakset&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Uncaught TypeError: Invalid value used in weak set&lt;/span&gt;
+weakset&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {[1,2,3]}&lt;/span&gt;
+weakset&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {[1,2,3], [1,2,3]}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;12. proxying/refection&lt;/h3&gt;
 &lt;h3&gt;13. symbols&lt;/h3&gt;
+&lt;p&gt;symbol 是 ES6 新增的一種基本數據型態(primitive data type)。&lt;br&gt;
+基本型態有七種: string，number，bigint，boolean，null，undefined，symbol。&lt;br&gt;
+特性: &lt;strong&gt;唯一&lt;/strong&gt;且不可改變(immutable)的資料型態，可用來識別物件的屬性。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;123&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;123&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+a &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; b &lt;span class=&quot;token comment&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;aaa&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;bbb&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;456&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+obj &lt;span class=&quot;token comment&quot;&gt;// {Symbol(aaa): 123, Symbol(bbb): 456}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;14. promises&lt;/h3&gt;
 &lt;p&gt;程式常常需要做 request 到後端來取得資料，但 server 並不會馬上回傳資料，要等待 server 處理的時間。這時程式就必須停下來等待，造成時間浪費。&lt;/p&gt;
 &lt;p&gt;ES6 提出了 promise 來解決這個非同步(asynchronously)的狀況。當發送 request 到 server 後，並不會停下來等 server 處理完，而是留下 callback 後，繼續執行後面任務。&lt;/p&gt;
@@ -169,7 +214,14 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;h3&gt;15. binary and octal literals&lt;/h3&gt;
 &lt;p&gt;支援二進位與八進位表示&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token number&quot;&gt;0b111&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//7&lt;/span&gt;
-&lt;span class=&quot;token number&quot;&gt;0o123&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//83&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Linux 核心設計 2021q1 Homework1 (lab0)]]></title><description><![CDATA[作業說明 課程連結 J01: lab0 取得作業程式碼sysprog21/lab0-c 作業目標 透過 linked list 實作 queue 的各種操作方法 new queue free queue insert head insert tail remove head…]]></description><link>https://moved0311.github.io/2021-03-22-linux-lab0-c/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-22-linux-lab0-c/</guid><pubDate>Mon, 22 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;作業說明&lt;/h1&gt;
+&lt;span class=&quot;token number&quot;&gt;0o123&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//83&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; num &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1010&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; binNum &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;0b&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;num&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; decNum &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;BigInt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;binNum&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 10n&lt;/span&gt;
+decNum&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// &quot;1010&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/add-binary/&quot;&gt;Leetcode #67&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Linux 核心設計 2021q1 Homework1 (lab0)]]></title><description><![CDATA[作業說明 課程連結 J01: lab0 取得作業程式碼sysprog21/lab0-c 作業目標 透過 linked list 實作 queue 的各種操作方法 new queue free queue insert head insert tail remove head…]]></description><link>https://moved0311.github.io/2021-03-22-linux-lab0-c/</link><guid isPermaLink="false">https://moved0311.github.io/2021-03-22-linux-lab0-c/</guid><pubDate>Mon, 22 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;作業說明&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://wiki.csie.ncku.edu.tw/linux/schedule&quot;&gt;課程連結&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://hackmd.io/@sysprog/linux2021-lab0&quot;&gt;J01: lab0&lt;/a&gt;&lt;/li&gt;
@@ -1167,33 +1219,8 @@ else:
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
-&lt;p&gt;在寫遞迴時，subset常常被重複計算造成浪費時間。DP使用一張表紀錄已經計算過得subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
-&lt;p&gt;例如使用遞迴計算Fibonacci數列，使用遞迴的時間複雜度是指數級別(exponential)，使用DP則能夠降到線性(linear)。&lt;/p&gt;
-&lt;h3&gt;Fibonacci&lt;/h3&gt;
-&lt;p&gt;T(n) = T(n-1) + T(n-2) &lt;/p&gt;
-&lt;p&gt;若使用遞迴方法計算T(5)，下面T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)   
-                   /                  \
-               T(4)                     T(3)   
-             /        \              /       \ 
-        T(3)        T(2)           T(2)     T(1)
-       /    \       /    \        /    \
-    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
-  /     \
-T(1)   T(0)			&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Implements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為1時的結果，長度為2時的結果，…，長度為n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
-&lt;p&gt;palindromic回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。&lt;/p&gt;
+    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic 回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為 1 時的結果，長度為 2 時的結果，…，長度為 n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
+&lt;p&gt;palindromic 回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。&lt;/p&gt;
 &lt;h2&gt;計算在字串中有多少個回文&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;input: &amp;quot;abc&amp;quot;
 output: 3  (&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1201,7 +1228,7 @@ output: 3  (&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;)&l
 output: 6 (&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;aa&amp;quot;,&amp;quot;aa&amp;quot;,&amp;quot;aaa&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;作法&lt;/h2&gt;
 &lt;h4&gt;DP&lt;/h4&gt;
-&lt;p&gt;建立一張表分別紀錄長度為1時的結果，長度為2時的結果，…，長度為n的結果。&lt;/p&gt;
+&lt;p&gt;建立一張表分別紀錄長度為 1 時的結果，長度為 2 時的結果，…，長度為 n 的結果。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;example1 : abbc&lt;/li&gt;
 &lt;/ul&gt;
@@ -1287,7 +1314,7 @@ output: 6 (&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&am
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;長度大於2時，就能夠向上查表。例如要填[0][2]這格，[0][2]表示字串abb，那就只需要判斷[0]和[2]是否相等加上之前紀錄的結果[1][1] ，所以[0][2](&lt;code class=&quot;language-text&quot;&gt;a === b &amp;amp;&amp;amp; True&lt;/code&gt;)為F。&lt;/p&gt;
+&lt;p&gt;長度大於 2 時，就能夠向上查表。例如要填[0][2]這格，[0][2]表示字串 abb，那就只需要判斷[0]和[2]是否相等加上之前紀錄的結果[1][1] ，所以[0][2](&lt;code class=&quot;language-text&quot;&gt;a === b &amp;amp;&amp;amp; True&lt;/code&gt;)為 F。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1370,7 +1397,7 @@ output: 6 (&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&am
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;output:&lt;/strong&gt; 5  (“a”, “b”, “b”, “c”, “bb”)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;output:&lt;/strong&gt; 5 (“a”, “b”, “b”, “c”, “bb”)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;example2: abaab&lt;/li&gt;
 &lt;/ul&gt;
@@ -1430,10 +1457,35 @@ output: 6 (&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&am
 &lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;output:&lt;/strong&gt; 8 (“a”, “b”, “a”,’ “a”, “b”, “aa”, “aba”, “baab”)&lt;/p&gt;
 &lt;h2&gt;Implementation&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/Algorithms/DP/palindromic.js&quot;&gt;Palindromic Substrings (DP)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/JS/Algorithms/DP/palindromic.js&quot;&gt;Palindromic Substrings (DP)&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/palindromic-substrings/&quot;&gt;leetcode - 647. Palindromic Substrings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset 常常被重複計算造成浪費時間。DP 使用一張表紀錄已經計算過得 subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算 Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
+&lt;p&gt;在寫遞迴時，subset 常常被重複計算造成浪費時間。DP 使用一張表紀錄已經計算過得 subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
+&lt;p&gt;例如使用遞迴計算 Fibonacci 數列，使用遞迴的時間複雜度是指數級別(exponential)，使用 DP 則能夠降到線性(linear)。&lt;/p&gt;
+&lt;h3&gt;Fibonacci&lt;/h3&gt;
+&lt;p&gt;T(n) = T(n-1) + T(n-2)&lt;/p&gt;
+&lt;p&gt;若使用遞迴方法計算 T(5)，下面 T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)
+                   /                  \
+               T(4)                     T(3)
+             /        \              /       \
+        T(3)        T(2)           T(2)     T(1)
+       /    \       /    \        /    \
+    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
+  /     \
+T(1)   T(0)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Implements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/JS/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/JS/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Kruslal's Minimum Spanning Tree]]></title><description><![CDATA[Minimum Spanning Tree (最小生成樹) 所有節點都要連通，且邊的權重總和最低。 邊的數量為節點數-1 Kruskal’s Algorithms 步驟： 將所有邊依照權重(weight)做排序 將邊依序由權重小至大加入到圖中，若加入的邊產生迴圈(cycle…]]></description><link>https://moved0311.github.io/2020-09-13-kruskal/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-13-kruskal/</guid><pubDate>Sun, 13 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Minimum Spanning Tree (最小生成樹)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;所有節點都要連通，且邊的權重總和最低。&lt;/li&gt;
@@ -2343,15 +2395,12 @@ create-react-app new-to-maskmap
 &lt;li&gt;&lt;a href=&quot;https://data.gov.tw/dataset/39284&quot;&gt;健保特約醫事機構-藥局&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://leafletjs.com/&quot;&gt;Leaflet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://wiki.openstreetmap.org/wiki/Tiles&quot;&gt;OpenStreet Map&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[WebSearching]]></title><description><![CDATA[相關程度 benchmark 資料集 benchmark queries(問句) 文章是否相關的標記(ground truths) queries 和 information need 有落差
-想找的東西,不會下 key word Precision (P) Precision…]]></description><link>https://moved0311.github.io/2017-03-07-webSearching/</link><guid isPermaLink="false">https://moved0311.github.io/2017-03-07-webSearching/</guid><pubDate>Tue, 07 Mar 2017 00:00:00 GMT</pubDate><content:encoded>&lt;div&gt;&lt;hr&gt;
-課本: [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)&lt;hr&gt;
-# CH8 Evaluation in information retrival      
-評量search engine好壞
-1. 搜到的index
-2. 搜尋速度
-3. 二氧化碳排放量
-4. 和搜尋相關程度&lt;p&gt;相關程度&lt;/p&gt;&lt;ol&gt;
+&lt;/ul&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[WebSearching]]></title><description><![CDATA[課本: Introduction to Information Retrieval CH8 Evaluation in information retrival 評量 search engine 好壞 搜到的 index…]]></description><link>https://moved0311.github.io/2017-03-07-webSearching/</link><guid isPermaLink="false">https://moved0311.github.io/2017-03-07-webSearching/</guid><pubDate>Tue, 07 Mar 2017 00:00:00 GMT</pubDate><content:encoded>&lt;div&gt;&lt;hr&gt;&lt;p&gt;課本: &lt;a href=&quot;https://nlp.stanford.edu/IR-book&quot;&gt;Introduction to Information Retrieval&lt;/a&gt;&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;CH8 Evaluation in information retrival&lt;/h1&gt;&lt;p&gt;評量 search engine 好壞&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;搜到的 index&lt;/li&gt;
+&lt;li&gt;搜尋速度&lt;/li&gt;
+&lt;li&gt;二氧化碳排放量&lt;/li&gt;
+&lt;li&gt;和搜尋相關程度&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;相關程度&lt;/p&gt;&lt;ol&gt;
 &lt;li&gt;benchmark 資料集&lt;/li&gt;
 &lt;li&gt;benchmark queries(問句)&lt;/li&gt;
 &lt;li&gt;文章是否相關的標記(ground truths)&lt;/li&gt;
@@ -2469,10 +2518,10 @@ Static:固定抽前 50 個字
 Dynamic:利用 nlp 技術,根據搜索關鍵字動態做變化&lt;/li&gt;
 &lt;li&gt;quicklinks&lt;br&gt;
 底下多的連結&lt;/li&gt;
-&lt;/ul&gt;&lt;hr&gt;
-# CH6 Model    
-* Vector Space Model
-* Probabilistic Information Retrieval&lt;p&gt;|Empirical IR | Model-based IR|
+&lt;/ul&gt;&lt;hr&gt;&lt;h1&gt;CH6 Model&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Vector Space Model&lt;/li&gt;
+&lt;li&gt;Probabilistic Information Retrieval&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;|Empirical IR | Model-based IR|
 |暴力法|有理論模型|
 |heuristic|數學假設|
 |難推廣到其他問題|容易推廣到其他問題|&lt;/p&gt;&lt;p&gt;&lt;strong&gt;IR model 歷史&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;
@@ -2669,9 +2718,7 @@ log 是 monotonic function 不會改變 ranking 順序&lt;/p&gt;
 &lt;li&gt;adding TF&lt;/li&gt;
 &lt;li&gt;adding Doc.length&lt;/li&gt;
 &lt;li&gt;query TF&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;改善後的最終公式稱作&lt;strong&gt;BM25&lt;/strong&gt;&lt;/p&gt;&lt;hr&gt;
-&lt;!-- 20170416 --&gt;
-# CH12 Language models for information retrieval&lt;p&gt;&lt;strong&gt;unigram language model&lt;/strong&gt;&lt;/p&gt;&lt;blockquote&gt;
+&lt;/ul&gt;&lt;p&gt;改善後的最終公式稱作&lt;strong&gt;BM25&lt;/strong&gt;&lt;/p&gt;&lt;hr&gt;&lt;!-- 20170416 --&gt;&lt;h1&gt;CH12 Language models for information retrieval&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;unigram language model&lt;/strong&gt;&lt;/p&gt;&lt;blockquote&gt;
 &lt;p&gt;每個 word 只有單一的狀態,可以建立一個 table 放每個 word 對應到的機率&lt;/p&gt;
 &lt;/blockquote&gt;&lt;p&gt;一個 string 出現的機率就是每個 word 的機率連乘積&lt;br&gt;
 Language model 應用：語音系統的語言校正&lt;/p&gt;&lt;p&gt;Language model 屬於 query generation process&lt;br&gt;
@@ -2738,12 +2785,12 @@ rank &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;
 由一個特定主題的 model,裡面會有各個字出現的機率(每一個 model 會有一個 distribution,機率分佈),取出一些機率較高的字可以形成 document&lt;/li&gt;
 &lt;li&gt;estimation&lt;br&gt;
 拿到一個 document,預估出 model&lt;/li&gt;
-&lt;/ul&gt;&lt;!-- 20170427 --&gt;&lt;!-- class --&gt;&lt;hr&gt;
-# CH13 Text Classification and Naive Bayes  
-* Text Classification
-* Naive Bayes
-* Naive Bayes Theory
-* Evaluation of Text Classification&lt;h4&gt;Text Classification&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;standard supervised&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;
+&lt;/ul&gt;&lt;!-- 20170427 --&gt;&lt;!-- class --&gt;&lt;hr&gt;&lt;h1&gt;CH13 Text Classification and Naive Bayes&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Text Classification&lt;/li&gt;
+&lt;li&gt;Naive Bayes&lt;/li&gt;
+&lt;li&gt;Naive Bayes Theory&lt;/li&gt;
+&lt;li&gt;Evaluation of Text Classification&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;Text Classification&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;standard supervised&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;
 &lt;li&gt;Pre-define categories and lebel document&lt;/li&gt;
 &lt;li&gt;classify new documents&lt;/li&gt;
 &lt;/ol&gt;&lt;p&gt;分類的方法&lt;/p&gt;&lt;ol&gt;
@@ -3033,7 +3080,7 @@ C 越小越可以容錯
 svm 提供 kernel function 的概念,將點 map 到更高維的空間中,就有機會能夠分割&lt;/p&gt;&lt;p&gt;kernel function
 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo separator=&quot;true&quot;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msubsup&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;K(x_i,x_j)=x_i^Tx_j&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1.036108em;vertical-align:-0.286108em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07153em;&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.31166399999999994em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mpunct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.16666666666666666em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.311664em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.05724em;&quot;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.286108em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1.1274389999999999em;vertical-align:-0.286108em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.8413309999999999em;&quot;&gt;&lt;span style=&quot;top:-2.441336em;margin-left:0em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;top:-3.063em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.13889em;&quot;&gt;T&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.258664em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.311664em;&quot;&gt;&lt;span style=&quot;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.05724em;&quot;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.286108em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;透過 kernel function 可以知道高維空間的內積值&lt;/p&gt;&lt;h4&gt;Common kernels&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;Linear&lt;/li&gt;
-&lt;li&gt;Polynomial \\\\\\\\\\$$&lt;/li&gt;
+&lt;li&gt;Polynomial \\\\\\\\\\\\\\\\$$&lt;/li&gt;
 &lt;div&gt;&lt;p&gt;Radial basis function(infinite dimensional space)&lt;/p&gt;&lt;!---------------------------- class --------------------------------------------&gt;&lt;!---------------------------- class --------------------------------------------&gt;&lt;/div&gt;
 &lt;/ul&gt;&lt;h1&gt;Ch16 Flat clustering&lt;/h1&gt;&lt;h4&gt;Classification 分類 vs. Clustering 分群&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;supervised learning&lt;/li&gt;
