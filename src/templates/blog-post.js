@@ -14,6 +14,11 @@ const StyledSection = styled.section`
     border: 1px solid #eee;
   }
 `
+const Time = styled.span`
+  fontsize: 0.83255rem;
+  lineheight: 1.75rem;
+  margin-left: 10px;
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -42,11 +47,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <p
             style={{
               ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
             }}
           >
             {post.frontmatter.date}
+            {post.frontmatter.lastUpdate && (
+              <Time>({post.frontmatter.lastUpdate}更新)</Time>
+            )}
           </p>
         </header>
         <StyledSection>{renderAst(post.htmlAst)}</StyledSection>
@@ -107,6 +113,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        lastUpdate(formatString: "MMMM DD, YYYY")
       }
     }
   }

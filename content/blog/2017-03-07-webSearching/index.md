@@ -786,10 +786,8 @@ $K(x_i,x_j)=x_i^Tx_j$
 #### Common kernels
 
 - Linear
-- Polynomial \\\\\\\\\\\\\\\\$\$
+- Polynomial
 - Radial basis function(infinite dimensional space)
-  <!---------------------------- class -------------------------------------------->
-  <!---------------------------- class -------------------------------------------->
 
 # Ch16 Flat clustering
 
@@ -850,10 +848,6 @@ O(IKNM)
 2. 從 1 開始慢慢加上去,並且計算 criteria 是否有增加
 
 # Ch21 Link Analysis
-
-Page Rank
-
-Ch21 Link Analysis
 
 - Anchor Text
 - Citation Analysis

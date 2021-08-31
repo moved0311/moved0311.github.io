@@ -1,8 +1,24 @@
 ---
-title: "ES6(ES2015)"
-date: "2021-08-29"
+title: "ES6-ES12"
+date: "2021-08-31"
 tags: ["JS"]
 ---
+
+別相信 Blog，直接看第一手資料
+
+- [ECMAScript Language Specification](https://tc39.es/ecma262/)
+
+# Content
+
+- [ES6 (ECMAScript 2015)](#ES6)
+- [ES7 (ECMAScript 2016)](#ES7)
+- [ES8 (ECMAScript 2017)](#ES8)
+- [ES9 (ECMAScript 2018)](#ES9)
+- [ES10 (ECMAScript 2019)](#ES10)
+- [ES11 (ECMAScript 2020)](#ES11)
+- [ES12 (ECMAScript 2021)](#ES12)
+
+<h1 id="ES6">ES6 (ECMAScript 2015)</h1>
 
 ### 1. let/const
 
@@ -291,3 +307,57 @@ decNum.toString(2) // "1010"
 ```
 
 - [Leetcode #67](https://leetcode.com/problems/add-binary/)
+
+---
+
+<h1 id="ES7">ES7 (ECMAScript 2016)</h1>
+
+---
+
+<h1 id="ES8">ES8 (ECMAScript 2017)</h1>
+
+---
+
+<h1 id="ES9">ES9 (ECMAScript 2018)</h1>
+
+---
+
+<h1 id="ES10">ES10 (ECMAScript 2019)</h1>
+
+---
+
+<h1 id="ES11">ES11 (ECMAScript 2020) </h1>
+
+### 1. String.prototype.matchAll
+
+### 2. import()
+
+### 3. BigInt
+
+遇到類似[Leetcode 1985](https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/)這類問題，
+Number 型態已經不足夠表示。Number 型態表示上限為$2^{53} - 1$。
+
+```js
+Math.pow(2, 53) // 9007199254740992
+Number.MAX_SAFE_INTEGER // 9007199254740991
+
+Number.MAX_SAFE_INTEGER + 1 // 9007199254740992
+Number.MAX_SAFE_INTEGER + 2 // 9007199254740992
+
+BigInt(Number.MAX_SAFE_INTEGER) + BigInt(1) // 9007199254740992n
+BigInt(Number.MAX_SAFE_INTEGER) + BigInt(2) // 9007199254740993n
+```
+
+### 4. Promise.allSettled
+
+### 5. globalThis
+
+### 6. for-in mechanics
+
+### 7. Optional Chaining
+
+### 8. Nullish coalescing Operator
+
+---
+
+# ES12 (ECMAScript 2021)

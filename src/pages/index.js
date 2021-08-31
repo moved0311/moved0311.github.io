@@ -14,6 +14,7 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = _.get(data, "site.siteMetadata.title", "")
   const posts = _.get(data, "allMarkdownRemark.edges", [])
   const categories = _.get(data, "allMarkdownRemark.group", [])
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
@@ -24,6 +25,7 @@ const BlogIndex = ({ data, location }) => {
         const title = node.frontmatter.title || node.fields.slug
         const tags = _.get(node, "frontmatter.tags", [])
         const isDraft = node.frontmatter.draft
+
         return (
           <article key={node.fields.slug} hidden={isDraft}>
             <header>
@@ -75,7 +77,6 @@ export const pageQuery = graphql`
             title
             description
             tags
-            draft
           }
         }
       }
