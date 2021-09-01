@@ -2,6 +2,7 @@
 title: "ES6-ES12"
 date: "2021-08-31"
 tags: ["JS"]
+lastUpdate: "2021-09-01"
 ---
 
 別相信 Blog，直接看第一手資料
@@ -60,18 +61,20 @@ a.map(v => v + 1)
 
 加入 classes，定義 class 更直觀。在 ES5 以前定義物件很複雜，沒有 class 關鍵字，所以會看到很多`XXX.prototype.YYY`的語法，在 ES6 幾乎看不見，精簡許多。
 
-ES6 建立 Stack Class
+- ES6 建立 Stack Class
 
 ```js
 class Stack {
-  stack = []
-  push = num => {
+  constructor() {
+    this.stack = []
+  }
+  push(num) {
     this.stack.push(num)
   }
-  pop = () => {
+  pop() {
     return this.stack.pop()
   }
-  size = () => {
+  size() {
     return this.stack.length
   }
 }
@@ -84,7 +87,7 @@ s.pop() // 3
 s.size() // 2
 ```
 
-ES6 之前的寫法
+- ES6 之前的寫法
 
 ```js
 const Stack = function () {
@@ -99,6 +102,34 @@ Stack.prototype.pop = function () {
 Stack.prototype.size = function () {
   return this.stack.length
 }
+```
+
+- 繼承寫法
+
+```js
+class Animal {
+  constructor(name, leg) {
+    this.name = name
+    this.leg = leg
+  }
+  bark() {
+    console.log("animal bark")
+  }
+}
+class Cat extends Animal {
+  constructor({ name, leg }) {
+    super(name, leg)
+    this.run = true
+    this.fly = false
+  }
+  bark() {
+    console.log("meow")
+  }
+}
+
+let cat = new Cat({ name: "Jack", leg: 4 })
+cat // Cat {name: "Jack", leg: 4, run: true, fly: false}
+cat.bark() // meow
 ```
 
 ### 4. template string
@@ -308,23 +339,26 @@ decNum.toString(2) // "1010"
 
 - [Leetcode #67](https://leetcode.com/problems/add-binary/)
 
----
-
 <h1 id="ES7">ES7 (ECMAScript 2016)</h1>
 
----
+### 1. Exponentiation Operator
+
+```js
+2 ** 3 // 8
+```
+
+### 2. Array.includes()
+
+```js
+let arr = ["Tom", "Jack", "David"]
+arr.includes("Tom") // true
+```
 
 <h1 id="ES8">ES8 (ECMAScript 2017)</h1>
 
----
-
 <h1 id="ES9">ES9 (ECMAScript 2018)</h1>
 
----
-
 <h1 id="ES10">ES10 (ECMAScript 2019)</h1>
-
----
 
 <h1 id="ES11">ES11 (ECMAScript 2020) </h1>
 
@@ -357,7 +391,5 @@ BigInt(Number.MAX_SAFE_INTEGER) + BigInt(2) // 9007199254740993n
 ### 7. Optional Chaining
 
 ### 8. Nullish coalescing Operator
-
----
 
 # ES12 (ECMAScript 2021)
