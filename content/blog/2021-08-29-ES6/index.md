@@ -2,7 +2,7 @@
 title: "ES6-ES12"
 date: "2021-08-31"
 tags: ["JS"]
-lastUpdate: "2021-09-01"
+lastUpdate: "2021-09-03"
 ---
 
 別相信 Blog，直接看第一手資料
@@ -355,6 +355,134 @@ arr.includes("Tom") // true
 ```
 
 <h1 id="ES8">ES8 (ECMAScript 2017)</h1>
+
+### 1. Async functions [(MDN)](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/async_function)
+
+可以用來簡化 ES6 Promise 寫法，await 表達式只能在 async 函式內部使用，await 會等待 Promise 解析完畢才會繼續往下執行。
+
+之前 ES6 Promise 範例，在 callServer()之後要處理回傳的 Promise 需要使用`.then()`來接。若拿回來的資料還要當做其他 function 的 input 會遇到`.then().then().then()`的狀況。
+
+```js
+const callServer = time => {
+  return new Promise((resolve, reject) => {
+    if (time <= 300) {
+      setTimeout(resolve({ msg: "request success!" }), time)
+    } else {
+      setTimeout(reject({ msg: "request failed!" }), time)
+    }
+  })
+}
+callServer(200).then(res => console.log(res))
+// {msg: "request success!"}
+callServer(400)
+  .then(res => console.log(res))
+  .catch(e => console.log(e)) // <--
+// {msg: "request failed!"}
+```
+
+ES8 async function 可以改善處理 promise 的寫法。
+
+```js
+const callServer = time => {
+  return new Promise((resolve, reject) => {
+    if (time <= 300) {
+      setTimeout(resolve({ msg: "request success!" }), time)
+    } else {
+      setTimeout(reject({ msg: "request failed!" }), time)
+    }
+  })
+}
+const run = async () => {
+  let success = await callServer(200)
+  let error = {}
+  try {
+    error = await callServer(400)
+  } catch (err) {
+    error = err
+  }
+
+  console.log(success) // {msg: "request success!"}
+  console.log(error) // {msg: "request failed!"}
+}
+run()
+```
+
+### 2. Object.entries
+
+```js
+let obj = { a: 1, b: 2, c: 3 }
+
+for (let [key, value] of Object.entries(obj)) {
+  console.log(key, value)
+}
+/*
+  a 1
+  b 2
+  c 3
+*/
+```
+
+### 3. Object.values
+
+```js
+let obj = { a: 1, b: 2, c: 3 }
+
+for (let value of Object.values(obj)) {
+  console.log(value)
+}
+/*
+  1
+  2
+  3
+*/
+```
+
+### 4. Object.getOwnPropertyDescriptors
+
+```js
+let obj = { a: 1, b: 2, c: 3 }
+
+let descriptors = Object.getOwnPropertyDescriptors(obj)
+
+descriptors
+
+/*
+{
+  a: {value: 1, writable: true, enumerable: true, configurable: true}
+  b: {value: 2, writable: true, enumerable: true, configurable: true}
+  c: {value: 3, writable: true, enumerable: true, configurable: true}
+}
+*/
+```
+
+### 5. String.padStart() [(MDN)](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/padStart), String.padEnd() [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
+
+- String.padStart()
+
+  > str.padStart(targetLength [, padString])
+
+```js
+"101".padStart(8) // "     101"
+"101".padStart(8, "0") // "00000101"
+"101".padStart(8, "xyz") // "xyzxy101"
+```
+
+- String.padEnd()
+
+```js
+"101".padEnd(8) // "101     "
+"101".padEnd(8, "0") // "10100000"
+"101".padEnd(8, "xyz") // "101xyzxy"
+```
+
+### 6. Shared memory and Atomic
+
+- [tc39/ecmascript_sharedmem](https://github.com/tc39/ecmascript_sharedmem/blob/master/TUTORIAL.md)
+- [Web Workers](https://developer.mozilla.org/zh-TW/docs/Web/API/Web_Workers_API/Using_web_workers)
+
+![shared-memory](./shared-memory.png)
+
+Atomic 是類似鎖，當 CPU1 在讀寫 shared memory 時，會把 shared memory 中的值複製一份到 cache 中。在讀寫時把 shared memory 鎖住，讓其他 CPU 不能夠讀寫，避免複製到舊的值，確保資料一致性。
 
 <h1 id="ES9">ES9 (ECMAScript 2018)</h1>
 

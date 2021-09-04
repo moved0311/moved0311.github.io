@@ -125,111 +125,63 @@ int sum(int n){
 }
 ```
 
-# 各種範例
+# 範例
 
-### 1. Swap
+## O(n)範例
+
+### 1.
 
 ```c
-Algorithms Swap(a,b)
-{              time    space
-	temp = a;  ---1    a   --- 1
-	a = b;     ---1    b   --- 1
-	b = temp;  ---1   temp --- 1
+for(i=0; i<n; i++){
+  //statement;
 }
-           f(n) = 3        s(n) = 3 words
-                O(1)           O(1)
-
 ```
 
-### 2. Frequency count method
+for loop 那行會執行 n+1 次(最後結束條件判斷)，但 for 裡面的描述只會執行 n 次。
+可以直接簡單看 for 裡面會跑 n 次，所以複雜度是 O(n)
 
-```c
-Algorithm sum(A,n){         // time    space
-    s = 0;                  //--- 1    A -- n
-    for(i = 0; i < n; i++){ //--- n+1  n -- 1
-                            //         s -- 1
-       s = s + A[i]         //---n     i -- 1
-    }                       //         S(n)=n + 3
-    return s;               //---1       O(n)
-}
-                           //f(n)=2n+3
-                           // O(n)
-```
-
-```c
-Algorithm Add(A,B,n){         // time
-	for(i=0; i<n; i++){       // n+1
-	  for(j=0; j<n; j++){     // n(n+1)
-	    c[i,j] = A[i,j]+B[i,j]; // n*n
-	  }                       // f(n)=2n^2+2n+1
-	}                         // O(n^2)
-}
-/*
-Space
-i -- 1
-j -- 1
-n -- 1
-A -- n^2
-B -- n^2
-C -- n^2
-S(n) = n^2+3
-O(n^2)
-*/
-```
-
-```c
-Algorithm Mutiply(A,B,n){
-  for(i=0; i<n; i++)              // n+1
-    for(j=0; j<n; j++){           // n(n+1)
-      C[i,j]=0;                   // n*n*1
-      for(k=0; k<n; k++)          // n*n*(n+1)
-        C[i,j]=C[i,j]+A[i,k]*B[k,j] //n*n*n
-	}                             //f(n)=2n^3+3n^2+2n+1
-}                                 //O(n^3)
-/*
-Space
-A -- n^2
-B -- n^2
-C -- n^2
-i -- 1
-j -- 1
-k -- 1
-n -- 1
-S(n) = 3n^2+4
-O(n^2)
-*/
-```
-
----
-
-### 3.
-
-```c
-for(i=0; i<n; i++){ // n+1
-  //statment;       // n
-}                   //O(n)
-```
-
-如果不要計算麼細, for 那行可以不用細算(最後都會降回 n) \
-只要知道 for 裡面的描述會執行 n 次，就可以簡單判斷是 O(n)
+### 2.
 
 ```c
 for(i=1; i<n; i=i+2){
-  //statment;       // n/2
-}                   //O(n)
+  //statement;
+}
 ```
 
-### 4.
+statement 執行 $\frac{n}{2}$ 次，複雜度 O($\frac{n}{2}$)省略常數所以是 O(n)
+
+### 3. DFS
 
 ```c
-for(i=0; i<n; i++){   // n+1
-  for(j=0; j<n; j++){ // n*(n+1)
-    //statment;       // n*n
+int sum(Node node) {
+  if (node == null) {
+    return 0;
   }
-}                   //O(n^2)
+  return sum(node.left) + node.value + sum(node.right);
+}
 ```
 
-### 5.
+- 有 N 個節點，每個節點都加過一次，時間複雜度為 O(N)
+- 二元樹，每個節點下面有兩個分支。遞迴呼叫時間複雜度為 \
+  O($樹分支^{樹高度}$) = O($2^{height}$) \
+  有 N 個節點，平衡樹高度為$\log{_2}{N}$ (假設有 8 個節點，高度為 3), \
+  代入得到時間複雜度為 O($2^{\log{_2}{N}}$) = O(N)
+
+## O($n^2$)範例
+
+### 1.
+
+```c
+for(i=0; i<n; i++){
+  for(j=0; j<n; j++){
+    //statement;
+  }
+}
+```
+
+第一層 for 迴圈執行 n 次，第二層 for 迴圈執行 n 次，做相乘 statement 共執行 n\*n 次，時間複雜度 O($n^2$)
+
+### 2.
 
 ```c
 for(i=0; i<n; i++){
@@ -252,11 +204,13 @@ f(n) = $\frac{n(n+1)}{2}$
 
 O(n) = $n^2$
 
-### 6.
+## $O(\log{n})$範例
+
+### 1.
 
 ```c
-for(i=1;i<=n;i=i*2)
-   //Statment
+for(i = 1; i <= n; i = i * 2)
+   //statement
 ```
 
 | i         |
@@ -274,11 +228,28 @@ $2^k$>n
 
 k>$\log(n)$
 
-### 7.
+### 2. 位數總和
 
 ```c
-for(i=0;i*i<n;i++)
-   //Statment
+int sumDigits(int n) {
+  int sum = 0;
+  while (n > 0) {
+    sum += n % 10;
+    n /= 10;
+  }
+  return sum;
+}
+```
+
+假設有 d 位數，n = $10^d$， d = $\log{n}$，時間複雜度為 O($\log{n}$)
+
+## $O(\sqrt{n})$範例
+
+### 1.
+
+```c
+for(i = 0; i * i < n; i++)
+   //statement
 ```
 
 | i    |
@@ -296,26 +267,14 @@ k\*k > n
 
 k > $\sqrt{n}$
 
-### 8
+## $O(n\log{n})$範例
+
+### 1.
 
 ```c
-P=0
-for(i=1; i<n; i=i*2) // log(n)
-	P++;             // P = log(n)
-for(j=1; j<P; j=j*2) // log(P)
-	//statment;      // log(P) = log(logn)
-					 //O(loglog(n))
-```
-
-### 9
-
-```c
-for(i=0; i<n; i++)      // n
-  for(j=1; j<n; j=j*2)  // n * logn
-	  //statment;       // nlogn
-	                    // -----
-	                    // 2nlogn + n
-	                    // O(nlogn)
+for(i = 0; i < n; i++)          // n
+  for(j = 1; j < n; j = j * 2)  // logn
+	  //statment;               // nlogn
 ```
 
 ## 比較兩個 function 時間複雜度大小
