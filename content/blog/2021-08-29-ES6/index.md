@@ -2,7 +2,7 @@
 title: "ES6-ES12"
 date: "2021-08-31"
 tags: ["JS"]
-lastUpdate: "2021-09-03"
+lastUpdate: "2021-09-05"
 ---
 
 別相信 Blog，直接看第一手資料
@@ -307,9 +307,9 @@ ES6 提出了 promise 來解決這個非同步(asynchronously)的狀況。當發
 const callServer = time => {
   return new Promise((resolve, reject) => {
     if (time <= 300) {
-      setTimeout(resolve({ msg: "request success!" }), time)
+      setTimeout(() => resolve({ msg: "request success!" }), time)
     } else {
-      setTimeout(reject({ msg: "request failed!" }), time)
+      setTimeout(() => reject({ msg: "request failed!" }), time)
     }
   })
 }
@@ -366,9 +366,9 @@ arr.includes("Tom") // true
 const callServer = time => {
   return new Promise((resolve, reject) => {
     if (time <= 300) {
-      setTimeout(resolve({ msg: "request success!" }), time)
+      setTimeout(() => resolve({ msg: "request success!" }), time)
     } else {
-      setTimeout(reject({ msg: "request failed!" }), time)
+      setTimeout(() => reject({ msg: "request failed!" }), time)
     }
   })
 }
@@ -386,9 +386,9 @@ ES8 async function 可以改善處理 promise 的寫法。
 const callServer = time => {
   return new Promise((resolve, reject) => {
     if (time <= 300) {
-      setTimeout(resolve({ msg: "request success!" }), time)
+      setTimeout(() => resolve({ msg: "request success!" }), time)
     } else {
-      setTimeout(reject({ msg: "request failed!" }), time)
+      setTimeout(() => reject({ msg: "request failed!" }), time)
     }
   })
 }
@@ -485,6 +485,136 @@ descriptors
 Atomic 是類似鎖，當 CPU1 在讀寫 shared memory 時，會把 shared memory 中的值複製一份到 cache 中。在讀寫時把 shared memory 鎖住，讓其他 CPU 不能夠讀寫，避免複製到舊的值，確保資料一致性。
 
 <h1 id="ES9">ES9 (ECMAScript 2018)</h1>
+
+### 1. Object rest and spread
+
+在 ES6 加入的 rest 與 spread 只能針對陣列做展開，ES8 擴展到也能夠針對物件展開。
+
+```js
+let obj = { a: 1, b: 2, c: 3 }
+let { a, ...rest } = obj
+a // 1
+rest // {b: 2, c: 3}
+```
+
+### 2. Promise.finally
+
+不管 Promise 是 resolve 還是 reject 都會執行 finally()，可以用來關閉 loading 狀態。
+
+```js
+const fetchData = time => {
+  return new Promise((resolve, reject) => {
+    if (time <= 300) {
+      setTimeout(() => resolve({ data: "request success" }), time)
+    } else {
+      setTimeout(() => reject({ data: "request failed!" }), time)
+    }
+  })
+}
+
+const run = async () => {
+  fetchData(400)
+    .then(({ data }) => console.log(data))
+    .catch(err => console.log(err))
+    .finally(() => console.log("finally"))
+}
+run()
+
+// {data: "request failed!"}
+// finally
+```
+
+### 3. Asynchronous Iteration
+
+支援在 for 迴圈內呼叫非同步 function。
+
+```js
+const fetchData = time => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(`success: ${time}ms`), time)
+  })
+}
+
+const run = async () => {
+  let times = [500, 1000, 2000]
+  for await (let ms of times) {
+    fetchData(ms).then(res => console.log(res))
+  }
+}
+run()
+// success: 500ms
+// success: 1000ms
+// success: 2000ms
+```
+
+### 4. Regular Expression Features
+
+- Named capture groups\
+  在正規表達式內使用`?<name>`來幫 group 取名字
+
+```js
+const re = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/
+const match = re.exec("2021-09-05")
+match.groups // {year: "2021", month: "09", day: "05"}
+```
+
+- dotAll\
+  [tc39/proposal-regexp-dotall-flag](https://github.com/tc39/proposal-regexp-dotall-flag)
+
+  `.`在正規表達式中代表任意字元，但不能是換行符號(line terminator)
+
+  ```c
+  /foo.bar/.test("fooAbar") // true
+  /foo.bar/.test("foo\nbar") // false
+  ```
+
+  建議解決方案\
+  增加 s flag，讓`.`能夠匹配任何字元包含換行符號
+
+  ```c
+  /foo.bar/s.test("foo\nbar") // true
+  ```
+
+- lookbehind assertions \
+  [tc39/proposal-regexp-lookbehind](https://github.com/tc39/proposal-regexp-lookbehind)
+
+  - Positive `(?<=...)`\
+    `(?<=x)y`表示 x 後面接著 y，才會匹配 y
+    ```js
+    let re = /(?<=\$)\d+\.\d+/
+    re.exec("$10.53")
+    // ["10.53", index: 1, input: "$10.53", groups: undefined]
+    re.exec("€10.53") // null
+    ```
+  - Negative `(?<!...)`\
+    `(?<!x)y`表示 x 後面不是 y，才會匹配 y
+
+- Unicode property escapes\
+   [tc39/proposal-regexp-unicode-property-escapes](https://github.com/tc39/proposal-regexp-unicode-property-escapes)
+  ```js
+  const regexGreekSymbol = /\p{Script=Greek}/u
+  regexGreekSymbol.test("π") // true
+  ```
+
+### 5. Escape sequences allowed in tagged template literals
+
+```js
+const tagged = (s, version, year) => {
+  console.log(s)
+  console.log(version)
+  console.log(year)
+}
+
+let version = "ES9"
+let year = 2018
+
+console.log(tagged`This is ${version} (ECMAScript${year}).`)
+/* 
+  ["This is ", " (ECMAScript", ").", raw: Array(3)]
+  ES9
+  2018
+*/
+```
 
 <h1 id="ES10">ES10 (ECMAScript 2019)</h1>
 
