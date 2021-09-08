@@ -618,6 +618,57 @@ console.log(tagged`This is ${version} (ECMAScript${year}).`)
 
 <h1 id="ES10">ES10 (ECMAScript 2019)</h1>
 
+### 1. Array.flat() [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) / Array.flatMap() [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
+
+- flat(deep)
+
+```js
+let arr1 = [1, 2, [3, 4]]
+arr1.flat() // [1, 2, 3, 4]
+
+let arr2 = [1, 2, [3, 4, [5, 6]]]
+arr2.flat() // [1, 2, 3, 4, [5, 6]]
+arr2.flat(2) // [1, 2, 3, 4, 5, 6]
+
+let arr3 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]
+arr3.flat(Infinity) // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+- flatMap()\
+  和 map()差在 map()完會再經過一層的 flat()展開。
+
+### 2. Object.fromEntries()[(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+
+把 Map、Array 傳換成物件。
+
+```js
+const map = new Map([
+  ["a", 1],
+  ["b", 2],
+])
+map // Map(2) {'a' => 1, 'b' => 2}
+Object.fromEntries(map) // {a: 1, b: 2}
+```
+
+```js
+let arr = [
+  ["a", 1],
+  ["b", 2],
+  ["c", 3],
+]
+Object.fromEntries(arr) // {a: 1, b: 2, c: 3}
+```
+
+### 3. String.trimStart() / String.trimEnd()
+
+去除左邊/右邊空白並返回一個新的字串，不會直接修改原來的值。
+
+```js
+let s = "   hello   "
+s.trimStart() // 'hello   '
+s.trimEnd() // '   hello'
+```
+
 <h1 id="ES11">ES11 (ECMAScript 2020) </h1>
 
 ### 1. String.prototype.matchAll
