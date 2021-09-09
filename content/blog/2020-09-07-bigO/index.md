@@ -2,7 +2,7 @@
 title: Big O
 date: "2020-09-07"
 tags: ["Algorithms"]
-lastUpdate: "2021-08-31"
+lastUpdate: "2021-09-09"
 ---
 
 > Big O 是用來評估演算法效率的漸進符號(Asymptotic Notation)。
@@ -18,7 +18,7 @@ lastUpdate: "2021-08-31"
 | $\Theta$ | theta     | average bound |
 
 假設實作出來的 f(n)時間複雜度是 2n+3，可以找到一個當 $n\ge 1$ 時，10n 永遠會大於等於 2n+3，那 10n 就是一個 f(n)的 upper bound。
-當然在 $n\ge 1$ 時，$n^2, n^3$都是一個 upper bound 但是會找最具代表性的作為 f(n)的 upper bound(最靠近)。
+當然在 $n\ge 1$ 時，$10n^2, 10n^3$都是一個 upper bound 但是會找最具代表性的作為 f(n)的 upper bound(最靠近)。
 
 通常考慮 n 很大的情形，所以只會用**最高次方項**作為代表，前面常數也會省略。所以 f(n)=2n+3 的時間複雜度用 O(n)表示。
 
@@ -108,6 +108,13 @@ for(int a: arrA){
   }
 }
 ```
+
+## 平攤分析 Amortized Analysis
+
+[Amortized Analysis - Potential functions](https://www.youtube.com/watch?v=B3SpQZaAZP4&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN&index=10)
+
+另一種分析演算法時間複雜度的角度。當每一次執行花費(cost)的不同時，可以使用平攤分析找到一個平均的 cost 來代表多次執行下的平均 cost。\
+概念像是上面影片提到的單程票與來回票。單程票角度來看: 從 A 到 B 花費 10 元，從 B 回 A 花費 10 元。從來回票角度看:從 A 到 B 花費 20 元，從 B 到 A 不用錢。總共花費都是 20 元，但是從不同角度來看。
 
 # 空間複雜度
 
