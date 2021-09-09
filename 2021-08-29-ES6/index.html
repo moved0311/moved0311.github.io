@@ -506,9 +506,16 @@ Object<span class="token punctuation">.</span><span class="token function">fromE
 s<span class="token punctuation">.</span><span class="token function">trimStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#x27;hello   &#x27;</span>
 s<span class="token punctuation">.</span><span class="token function">trimEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#x27;   hello&#x27;</span></code></pre></div>
 <h1 id="ES11">ES11 (ECMAScript 2020) </h1>
-<h3>1. String.prototype.matchAll</h3>
-<h3>2. import()</h3>
-<h3>3. BigInt</h3>
+<h3>1. string.matchAll() <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll">(MDN)</a></h3>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token string">&quot;abcdacd&quot;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>s<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span><span class="token regex">/a/g</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">/*
+[
+  [&#x27;a&#x27;, index: 0, input: &#x27;abcdacd&#x27;, groups: undefined],
+  [&#x27;a&#x27;, index: 4, input: &#x27;abcdacd&#x27;, groups: undefined]
+]
+*/</span></code></pre></div>
+<h3>2. BigInt</h3>
 <p>遇到類似<a href="https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/">Leetcode 1985</a>這類問題，
 Number 型態已經不足夠表示。Number 型態表示上限為<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>53</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{53} - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em"></span><span class="mord">1</span></span></span></span>。</p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">)</span> <span class="token comment">// 9007199254740992</span>
@@ -519,11 +526,72 @@ Number<span class="token punctuation">.</span><span class="token constant">MAX_S
 
 <span class="token function">BigInt</span><span class="token punctuation">(</span>Number<span class="token punctuation">.</span><span class="token constant">MAX_SAFE_INTEGER</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">BigInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// 9007199254740992n</span>
 <span class="token function">BigInt</span><span class="token punctuation">(</span>Number<span class="token punctuation">.</span><span class="token constant">MAX_SAFE_INTEGER</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">BigInt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// 9007199254740993n</span></code></pre></div>
-<h3>4. Promise.allSettled</h3>
-<h3>5. globalThis</h3>
-<h3>6. for-in mechanics</h3>
-<h3>7. Optional Chaining</h3>
-<h3>8. Nullish coalescing Operator</h3>
+<h3>3. Promise.allSettled</h3>
+<p>Promise.all() 在遇到 reject 時會停止後續動作(short-circuit)，直接噴錯。<br/>
+Promise.allSettled() 其中有遇到 reject 還是會將其他 promise 執行完畢。</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> promise1 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> promise2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> promise3 <span class="token operator">=</span> <span class="token number">42</span>
+
+Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>promise1<span class="token punctuation">,</span> promise2<span class="token punctuation">,</span> promise3<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">values</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// error</span>
+
+Promise<span class="token punctuation">.</span><span class="token function">allSettled</span><span class="token punctuation">(</span><span class="token punctuation">[</span>promise1<span class="token punctuation">,</span> promise2<span class="token punctuation">,</span> promise3<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">values</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">/*
+[
+  { status: &#x27;fulfilled&#x27;, value: 3 },
+  { status: &#x27;rejected&#x27;, reason: &#x27;error&#x27; },
+  { status: &#x27;fulfilled&#x27;, value: 42 }
+]
+*/</span></code></pre></div>
+<h3>4. globalThis</h3>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c">var a <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment">// Window{..., a: 10, ...}</span>
+
+<span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  let a <span class="token operator">=</span> <span class="token number">20</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// 20</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>this<span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>frames<span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>globalThis<span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<h3>5. Nullish coalescing Operator (??) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator">(MDN)</a></h3>
+<p><code class="language-text">??</code>左側為否定只判斷<code class="language-text">null</code>和<code class="language-text">undefined</code></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">null</span> <span class="token operator">??</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// hello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">undefined</span> <span class="token operator">??</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// hello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token boolean">false</span> <span class="token operator">??</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">??</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span> <span class="token operator">??</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// &quot;&quot;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">null</span> <span class="token operator">||</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// hello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">undefined</span> <span class="token operator">||</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// hello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token boolean">false</span> <span class="token operator">||</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// hello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">||</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// hello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span> <span class="token operator">||</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span> <span class="token comment">// hello</span></code></pre></div>
+<h3>6. Optional Chaining (?.)</h3>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>
+  b<span class="token operator">:</span> <span class="token punctuation">{</span>
+    c<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+a<span class="token punctuation">.</span>b<span class="token punctuation">.</span>c <span class="token comment">// 1</span>
+a<span class="token punctuation">.</span>d<span class="token punctuation">.</span>c <span class="token comment">// TypeError: Cannot read properties of undefined</span>
+a<span class="token operator">?.</span>d<span class="token operator">?.</span>c <span class="token comment">// undefined</span></code></pre></div>
+<h3>7. module</h3>
+<ul>
+<li>import()<br/>
+支援動態載入，可在需要時才 import。</li>
+<li>import.meta</li>
+<li>export * as ns from ‘module’</li>
+</ul>
 <h1>ES12 (ECMAScript 2021)</h1></div></section><hr style="margin-bottom:1.75rem"/><footer><div class="sc-AxjAm bcMPWx"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.875rem;margin-bottom:0;min-width:50px;border-radius:100%"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMEAQX/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgD/2gAMAwEAAhADEAAAAfIa4w5HVTeZmYx//8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIAAxEQIf/aAAgBAQABBQLTgYzZTQzLc3kd2Jzn/8QAFREBAQAAAAAAAAAAAAAAAAAAIGH/2gAIAQMBAT8Bo//EABURAQEAAAAAAAAAAAAAAAAAACBh/9oACAECAQE/AYP/xAAaEAACAgMAAAAAAAAAAAAAAAABEQAQAhJx/9oACAEBAAY/Ao1W5K7FSORv/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARIRAxUXGB/9oACAEBAAE/IXIF3AZJ8mIpD4g7gtVXe1xhg9xIwn//2gAMAwEAAgADAAAAEPz4Av/EABcRAQEBAQAAAAAAAAAAAAAAAAEAERD/2gAIAQMBAT8QQTVs8//EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEh/9oACAECAQE/EBTi0Rj/xAAcEAEBAAIDAQEAAAAAAAAAAAABEQAhMUGBUaH/2gAIAQEAAT8QEhU2S6wOyO4T0dYcEwS7sU0nK9YNevSn55g0NzzGydRCLfs5w9y07zhn/9k=" alt="Taiyi" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/df1c07dcead33b3ecc9fc8ba5babf138/99438/profile-pic.jpg 1x,
 /static/df1c07dcead33b3ecc9fc8ba5babf138/aba1d/profile-pic.jpg 1.5x,
 /static/df1c07dcead33b3ecc9fc8ba5babf138/b315d/profile-pic.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/static/df1c07dcead33b3ecc9fc8ba5babf138/99438/profile-pic.jpg 1x,
