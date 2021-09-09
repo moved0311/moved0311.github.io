@@ -671,11 +671,20 @@ s.trimEnd() // '   hello'
 
 <h1 id="ES11">ES11 (ECMAScript 2020) </h1>
 
-### 1. String.prototype.matchAll
+### 1. string.matchAll() [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
 
-### 2. import()
+```js
+let s = "abcdacd"
+console.log([...s.matchAll(/a/g)])
+/*
+[
+  ['a', index: 0, input: 'abcdacd', groups: undefined],
+  ['a', index: 4, input: 'abcdacd', groups: undefined]
+]
+*/
+```
 
-### 3. BigInt
+### 2. BigInt
 
 遇到類似[Leetcode 1985](https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/)這類問題，
 Number 型態已經不足夠表示。Number 型態表示上限為$2^{53} - 1$。
@@ -691,14 +700,88 @@ BigInt(Number.MAX_SAFE_INTEGER) + BigInt(1) // 9007199254740992n
 BigInt(Number.MAX_SAFE_INTEGER) + BigInt(2) // 9007199254740993n
 ```
 
-### 4. Promise.allSettled
+### 3. Promise.allSettled
 
-### 5. globalThis
+Promise.all() 在遇到 reject 時會停止後續動作(short-circuit)，直接噴錯。\
+Promise.allSettled() 其中有遇到 reject 還是會將其他 promise 執行完畢。
 
-### 6. for-in mechanics
+```js
+let promise1 = Promise.resolve(3)
+let promise2 = new Promise((resolve, reject) => {
+  setTimeout(reject("error"))
+})
+let promise3 = 42
 
-### 7. Optional Chaining
+Promise.all([promise1, promise2, promise3])
+  .then(values => {
+    console.log(values)
+  })
+  .catch(() => console.log("error"))
+// error
 
-### 8. Nullish coalescing Operator
+Promise.allSettled([promise1, promise2, promise3]).then(values => {
+  console.log(values)
+})
+/*
+[
+  { status: 'fulfilled', value: 3 },
+  { status: 'rejected', reason: 'error' },
+  { status: 'fulfilled', value: 42 }
+]
+*/
+```
+
+### 4. globalThis
+
+```c
+var a = 10 // Window{..., a: 10, ...}
+
+(function () {
+  let a = 20
+  console.log(a) // 20
+  console.log(this.a) // 10
+  console.log(window.a) // 10
+  console.log(frames.a) // 10
+  console.log(globalThis.a) // 10
+})()
+```
+
+### 5. Nullish coalescing Operator (??) [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+
+`??`左側為否定只判斷`null`和`undefined`
+
+```js
+console.log(null ?? "hello") // hello
+console.log(undefined ?? "hello") // hello
+console.log(false ?? "hello") // false
+console.log(0 ?? "hello") // 0
+console.log("" ?? "hello") // ""
+
+console.log(null || "hello") // hello
+console.log(undefined || "hello") // hello
+console.log(false || "hello") // hello
+console.log(0 || "hello") // hello
+console.log("" || "hello") // hello
+```
+
+### 6. Optional Chaining (?.)
+
+```js
+let a = {
+  b: {
+    c: 1,
+  },
+}
+a.b.c // 1
+a.d.c // TypeError: Cannot read properties of undefined
+a?.d?.c // undefined
+```
+
+### 7. module
+
+- import()\
+  支援動態載入，可在需要時才 import。
+- import.meta
+- export \* as ns from 'module'
 
 # ES12 (ECMAScript 2021)
