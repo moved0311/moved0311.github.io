@@ -2,7 +2,7 @@
 title: "ES6-ES12"
 date: "2021-08-31"
 tags: ["JS"]
-lastUpdate: "2021-09-05"
+lastUpdate: "2022-02-01"
 ---
 
 別相信 Blog，直接看第一手資料
@@ -784,4 +784,96 @@ a?.d?.c // undefined
 - import.meta
 - export \* as ns from 'module'
 
-# ES12 (ECMAScript 2021)
+<h1 id="ES12">ES12 (ECMAScript 2021) </h1>
+
+### 1. replaceAll
+
+```js
+let str = "ABCDFABCGHIABC"
+str.replaceAll("ABC", "xxx") // 'xxxDFxxxGHIxxx'
+```
+
+```js
+str.replace(/ABC/g, "xxx") // 'xxxDFxxxGHIxxx'
+```
+
+### 2. [Promise.any](https://github.com/tc39/proposal-promise-any)
+
+> a Promise combinator that short-circuits when an input value is fulfilled (遇到的第一個 Promise 是 fullilled 就回傳,後面的都不做了)
+
+- Promise.all
+
+  所有的 Promise 都要 fulfilled 否則報錯
+
+- Promise.allSettled
+
+  遇到 Promise 是 rejected 還是會把後面的 Promise 做完
+
+- Promise.any
+
+  會傳第一個 fulfilled 的 Promise，之後的 Promise 不執行。\
+  若全部都是 rejected 則報錯(`Uncaught (in promise) AggregateError: All promises were rejected`)
+
+### 3. AggregateError
+
+> a new Error type to represent multiple errors at once (一個新的 Error type, 把多個 Errors 包在一起)
+
+```js
+Promise.any([
+  Promise.reject("error1"),
+  Promise.reject("error2"),
+  Promise.reject("error3"),
+]).catch(err => err)
+
+/*
+AggregateError{
+  errors: (3) ['error1', 'error2', 'error3']
+  message: "All promises were rejected"
+  stack: "AggregateError: All promises were rejected"
+}
+*/
+```
+
+### 4. `??=`, `&&=`, `||=`
+
+```js
+let a = undefined
+let b = 1
+
+a ??= b // 如果a是nullish(null, undefined), 將b賦值到a
+```
+
+```js
+let a = 1
+a &&= 10 // 如果a是truthy,則賦值到a (a = 10)
+
+let b = 0
+b &&= 10 // 如果b是falsy,則不賦值 (b = 0)
+```
+
+```js
+let a = 1
+a ||= 10 // 如果a是truthy,則不賦值 (a = 0)
+
+let b = 0
+b ||= 10 // 如果b是falsy,則賦值到b (b = 10)
+```
+
+### 5. WeakRef
+
+> for referring to a target object without preserving it from garbage collection
+
+### 6. FinalizationRegistry
+
+> to manage registration and unregistration of cleanup operations performed when target objects are garbage collected (在註冊的物件被回收時,執行 callback)
+
+```c
+const r = new FinalizationRegistry(
+  () => console.log("callback")
+);
+
+(() => {
+  let obj = { a: 1, b: 2 }
+  r.register(obj)
+})();
+```
