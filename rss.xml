@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 30 Oct 2022 20:11:06 GMT</lastBuildDate><item><title><![CDATA[鉅亨網前端工作一年心得]]></title><description><![CDATA[前言 在 2021 九月底開始在鉅亨前端工作，是我的第二份工作。 第一份工作是在接案公司，會離職是覺得接案公司的文化沒辦法長期累積經驗，沒有完整的開發流程，Code Review…]]></description><link>https://moved0311.github.io/2022-10-23-Work-Experience/</link><guid isPermaLink="false">https://moved0311.github.io/2022-10-23-Work-Experience/</guid><pubDate>Mon, 31 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 25 Nov 2022 21:19:00 GMT</lastBuildDate><item><title><![CDATA[TypeScript]]></title><description><![CDATA[React Component 組合 types Record & Pick Reference [YouTube] Typescript for React Components From Beginners to Masters]]></description><link>https://moved0311.github.io/2022-11-23-TypeScript/</link><guid isPermaLink="false">https://moved0311.github.io/2022-11-23-TypeScript/</guid><pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;React Component&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;Header&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; string &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Header&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;Hello&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; Header &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; children &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; children&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ReactNode &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;ReactElement&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/* const fn = (a: a參數型態): fn回傳型態 =&gt; {} */&lt;/span&gt;
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Header&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Header&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;組合 types&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; AType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  a&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; BType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  b&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; CType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; AType &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; BType
+&lt;span class=&quot;token comment&quot;&gt;// { a: number, b: nubmer } &lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; DType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; AType &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; BType
+&lt;span class=&quot;token comment&quot;&gt;// { a: number } or { b: number }&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Record &amp;#x26; Pick&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;CATEGORY&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;c&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; ContentAll &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Record&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;CATEGORY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// {a :string, b: string, c: string}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; ContentPick &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Pick&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ContentAll&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;CATEGORY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;CATEGORY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// {a: string, c: string}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=z8lDwLKthr8&amp;#x26;list=WL&amp;#x26;index=1&quot;&gt;[YouTube] Typescript for React Components From Beginners to Masters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[鉅亨網前端工作一年心得]]></title><description><![CDATA[前言 在 2021 九月底開始在鉅亨前端工作，是我的第二份工作。 第一份工作是在接案公司，會離職是覺得接案公司的文化沒辦法長期累積經驗，沒有完整的開發流程，Code Review…]]></description><link>https://moved0311.github.io/2022-10-23-Work-Experience/</link><guid isPermaLink="false">https://moved0311.github.io/2022-10-23-Work-Experience/</guid><pubDate>Mon, 31 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;在 2021 九月底開始在鉅亨前端工作，是我的第二份工作。&lt;br&gt;
 第一份工作是在接案公司，會離職是覺得接案公司的文化沒辦法長期累積經驗，沒有完整的開發流程，Code Review、寫測試制度等等。所以在挑下一個工作時就會考慮公司要有自己的產品長期維護和有一套完整開發流程。&lt;/p&gt;
 &lt;h2&gt;技術部門組成&lt;/h2&gt;
@@ -1731,32 +1775,7 @@ else:
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset 常常被重複計算造成浪費時間。DP 使用一張表紀錄已經計算過得 subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算 Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
-&lt;p&gt;在寫遞迴時，subset 常常被重複計算造成浪費時間。DP 使用一張表紀錄已經計算過得 subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
-&lt;p&gt;例如使用遞迴計算 Fibonacci 數列，使用遞迴的時間複雜度是指數級別(exponential)，使用 DP 則能夠降到線性(linear)。&lt;/p&gt;
-&lt;h3&gt;Fibonacci&lt;/h3&gt;
-&lt;p&gt;T(n) = T(n-1) + T(n-2)&lt;/p&gt;
-&lt;p&gt;若使用遞迴方法計算 T(5)，下面 T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)
-                   /                  \
-               T(4)                     T(3)
-             /        \              /       \
-        T(3)        T(2)           T(2)     T(1)
-       /    \       /    \        /    \
-    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
-  /     \
-T(1)   T(0)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Implements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/JS/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/JS/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic 回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為 1 時的結果，長度為 2 時的結果，…，長度為 n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
+    &lt;/span&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Palindromic Substrings]]></title><description><![CDATA[Palindromic Substrings palindromic 回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。 計算在字串中有多少個回文 作法 DP 建立一張表分別紀錄長度為 1 時的結果，長度為 2 時的結果，…，長度為 n…]]></description><link>https://moved0311.github.io/2020-09-21-PalindromicSubString/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-PalindromicSubString/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Palindromic Substrings&lt;/h2&gt;
 &lt;p&gt;palindromic 回文，字串由左至右讀和由右至左讀結果相同。e.g. “abba”, “abbcbba”。&lt;/p&gt;
 &lt;h2&gt;計算在字串中有多少個回文&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;input: &amp;quot;abc&amp;quot;
@@ -1998,6 +2017,31 @@ output: 6 (&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&am
 &lt;h2&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/palindromic-substrings/&quot;&gt;leetcode - 647. Palindromic Substrings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[Dynamic Programming 在寫遞迴時，subset 常常被重複計算造成浪費時間。DP 使用一張表紀錄已經計算過得 subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。 例如使用遞迴計算 Fibonacci…]]></description><link>https://moved0311.github.io/2020-09-21-DP/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-21-DP/</guid><pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Dynamic Programming&lt;/h2&gt;
+&lt;p&gt;在寫遞迴時，subset 常常被重複計算造成浪費時間。DP 使用一張表紀錄已經計算過得 subset，若要計算的函數已經出現過在表上，則直接查表不需要再重新計算。&lt;/p&gt;
+&lt;p&gt;例如使用遞迴計算 Fibonacci 數列，使用遞迴的時間複雜度是指數級別(exponential)，使用 DP 則能夠降到線性(linear)。&lt;/p&gt;
+&lt;h3&gt;Fibonacci&lt;/h3&gt;
+&lt;p&gt;T(n) = T(n-1) + T(n-2)&lt;/p&gt;
+&lt;p&gt;若使用遞迴方法計算 T(5)，下面 T(2)~T(4)會被重複計算多次，造成複雜度是指數形式。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;                           T(5)
+                   /                  \
+               T(4)                     T(3)
+             /        \              /       \
+        T(3)        T(2)           T(2)     T(1)
+       /    \       /    \        /    \
+    T(2)   T(1)  T(1) T(0)     T(1)    T(0)
+  /     \
+T(1)   T(0)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Implements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/JS/Algorithms/Recursive/fibonacci.js&quot;&gt;recursive - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/moved0311/DSA/blob/master/JS/Algorithms/DP/fibonacci.js&quot;&gt;dynamic programming - fibonacci&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/dynamic-programming/&quot;&gt;geeksforgeeks - Dynamic Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/&quot;&gt;leetcode - 198. House Robber&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.&quot;&gt;From good to great. How to approach most of DP problems.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Kruslal's Minimum Spanning Tree]]></title><description><![CDATA[Minimum Spanning Tree (最小生成樹) 所有節點都要連通，且邊的權重總和最低。 邊的數量為節點數-1 Kruskal’s Algorithms 步驟： 將所有邊依照權重(weight)做排序 將邊依序由權重小至大加入到圖中，若加入的邊產生迴圈(cycle…]]></description><link>https://moved0311.github.io/2020-09-13-kruskal/</link><guid isPermaLink="false">https://moved0311.github.io/2020-09-13-kruskal/</guid><pubDate>Sun, 13 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Minimum Spanning Tree (最小生成樹)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;所有節點都要連通，且邊的權重總和最低。&lt;/li&gt;
