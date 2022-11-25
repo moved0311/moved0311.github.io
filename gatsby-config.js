@@ -3,7 +3,7 @@ module.exports = {
     title: `Taiyi's Blog`,
     author: {
       name: `Taiyi`,
-      summary: `who lives and works in Taiwan.`,
+      summary: `目前正在鉅亨擔任前端打工仔`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://moved0311.github.io/`,

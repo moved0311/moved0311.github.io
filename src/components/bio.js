@@ -59,7 +59,7 @@ const Bio = () => {
         }}
       />
       <div>
-        Written by <strong>{author.name}</strong> {author.summary}
+        <strong>{author.name}</strong> {author.summary}
       </div>
     </BioContainer>
   )
