@@ -2,10 +2,10 @@
 title: "TypeScript"
 date: "2022-11-25"
 tags: ["TypeScript"]
-lastUpdate: "2022-12-09"
+lastUpdate: "2022-12-15"
 ---
 
-### React Component
+### React元件範例 
 
 ```jsx
 const Header = ({ title }: { title: string }) => {
@@ -27,7 +27,8 @@ const Header = ({ children }: { children: ReactNode }): ReactElement => {
 </Header>
 ```
 
-### 組合 types
+## types 邏輯運算
+### AND OR
 ```ts
 type AType = {
   a: number
@@ -43,6 +44,18 @@ type CType = AType & BType
 type DType = AType | BType
 // { a: number } or { b: number }
 ```
+
+### IF
+在Typescript中用extends關鍵字來表示分支(if...else)
+```ts
+If<true, 'a', 'b'>   // 'a'
+If<false, 'a', 'b'>  // 'b'
+
+type If<C, T, F> = C extends true ? T : F;
+// C是否是true,是的情況返回T, 否則返回F
+```
+
+## Typescript Utility Types
 ### Record & Pick
 ```ts
 enum CATEGORY {
@@ -73,7 +86,7 @@ type ContentPick = Pick<ContentAll, CATEGORY.A | CATEGORY.C>
   */
   ```
 
-## Readonly
+### Readonly
 `Readonly<T>`,將type T 設定成唯讀屬性
 ```ts
   type MyReadonly<T> = {
@@ -81,10 +94,10 @@ type ContentPick = Pick<ContentAll, CATEGORY.A | CATEGORY.C>
   }
 ```
 
-## PropertyKey
+### PropertyKey
 PropertyKey保留字,等同string | number | symbol
 
-## Infer
+### Infer
 依靠TypeScript來判斷型態，必須使用在extends之後\
 extends是Typescript中分支的功能像是if...else
 ```ts
@@ -97,7 +110,7 @@ type Title<T> = T extends string ? string : unknown
 type First<T extends any[]> = T extends [infer U, ...any[]] ? U : never;
 ```
 
-## Exclude
+### Exclude
 Exclude<T, U> 在T中，但不在U中
 ```ts
 type Exclude<T, U> = T extends U ? never : T;
@@ -110,6 +123,23 @@ type Exclude<T, U> = T extends U ? never : T;
   "a" extends "c" -> "a"
   "b" extends "c" -> "b"
   "c" extends "c" -> never
+*/
+```
+
+### Awaited
+Promise處理完後的返回型態
+```ts
+type X = Promise<string>
+
+Awaited<X> // string
+```
+```ts
+type Awaited<T> = T extends Promise<infer R> ? 
+                    (R extends Promise<unknown> ? Awaited<R> : R)
+                 : never;
+/*
+  先判斷T是不是Prmoise不是回傳never
+  判斷Promise裡面是不是還有Promise,是的話遞迴處理,否則回傳T
 */
 ```
 

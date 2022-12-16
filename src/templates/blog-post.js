@@ -13,10 +13,24 @@ const StyledSection = styled.section`
     background: white;
     border: 1px solid #eee;
   }
+
+  h2 {
+    position: relative;
+
+    ::before {
+      content: "";
+      width: 6px;
+      height: 30px;
+      background-color: #007acc;
+      position: absolute;
+      left: -16px;
+      top: 1px;
+    }
+  }
 `
 const Time = styled.span`
-  fontsize: 0.83255rem;
-  lineheight: 1.75rem;
+  font-size: 0.83255rem;
+  line-height: 1.75rem;
   margin-left: 10px;
 `
 
