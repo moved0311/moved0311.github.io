@@ -119,7 +119,7 @@ type Exclude<T, U> = T extends U ? never : T;
   never是所有Type的子集合
   type a = string | never // string
 
-  Exclude<"a", "b", "c", "c"> -> "a", "b"
+  Exclude<"a" | "b" | "c", "c"> -> "a", "b"
   "a" extends "c" -> "a"
   "b" extends "c" -> "b"
   "c" extends "c" -> never

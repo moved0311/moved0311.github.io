@@ -2,11 +2,8 @@
 title: "ES6-ES12"
 date: "2021-08-31"
 tags: ["JS"]
-lastUpdate: "2022-02-01"
+lastUpdate: "2022-12-30"
 ---
-
-別相信 Blog，直接看第一手資料
-
 - [ECMAScript Language Specification](https://tc39.es/ecma262/)
 
 # Content
@@ -207,9 +204,52 @@ for (let n of nums) {
 */
 ```
 
-### 8. generators
+### 8. Generators
+* 一般function
+```js
+  function f() {
+      console.log('1.')
+      console.log('2.')
 
-- [ES6 Generator 基礎 #1](https://github.com/aszx87410/blog/issues/1)
+      return 'Hello World'
+  }
+```
+* generator function\
+會在function保留字後面在加上星號(*)\
+generator function回傳值是generator object, 是一個iterator\
+genertaor function內使用`yield`來暫停執行。
+```js
+  function* f() {
+      yield 'yield 1.'
+      console.log('1.')
+
+      yield 'yield 2.'
+      console.log('2.')
+
+      return 'Hello World'
+  }
+
+  const iter = f()
+  iter.next() // {value: 'yield 1.', done: false}
+  iter.next() // {value: 'yield 2.', done: false}
+  iter.next() // {value: 'Hello World', done: true}
+```
+
+```js
+function* f() {
+  yield 'a'
+  yield 'b'
+  yield 'c'
+  yield 'd'
+}
+
+const iter = f()
+console.log([...iter]) // [a, b, c, d]
+```
+
+* Reference
+  - [💡🎁 JavaScript Visualized: Generators and Iterators - DEV Community 👩‍💻👨‍💻](https://dev.to/lydiahallie/javascript-visualized-generators-and-iterators-e36)
+  - [ES6 Generator 基礎 #1](https://github.com/aszx87410/blog/issues/1)
 
 ### 9. unicode
 
