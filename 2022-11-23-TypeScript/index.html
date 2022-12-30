@@ -89,7 +89,7 @@ extends是Typescript中分支的功能像是if…else</p>
   never是所有Type的子集合
   type a = string | never // string
 
-  Exclude&lt;&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;c&quot;&gt; -&gt; &quot;a&quot;, &quot;b&quot;
+  Exclude&lt;&quot;a&quot; | &quot;b&quot; | &quot;c&quot;, &quot;c&quot;&gt; -&gt; &quot;a&quot;, &quot;b&quot;
   &quot;a&quot; extends &quot;c&quot; -&gt; &quot;a&quot;
   &quot;b&quot; extends &quot;c&quot; -&gt; &quot;b&quot;
   &quot;c&quot; extends &quot;c&quot; -&gt; never
