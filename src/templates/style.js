@@ -21,10 +21,12 @@ const PostContent = styled.section`
   }
 
   .language-text {
-    color: #e38e00;
-    background-color: inherit;
-    border: 1px solid #dcdcdc;
+    /* color: #ff6363; */
+    /* background-color: #ffebeb; */
+    color: #ff4545;
+    background-color: #fff2f2;
     padding: 0 4px;
+    text-shadow: none;
   }
 `
 
