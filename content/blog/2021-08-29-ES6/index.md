@@ -2,7 +2,7 @@
 title: "ES6-ES12"
 date: "2021-08-31"
 tags: ["JS"]
-lastUpdate: "2022-12-30"
+lastUpdate: "2023-01-16"
 ---
 - [ECMAScript Language Specification](https://tc39.es/ecma262/)
 
@@ -446,6 +446,9 @@ const run = async () => {
 }
 run()
 ```
+
+
+*  [⭐️🎀 JavaScript Visualized: Promises & Async/Await - DEV Community 👩‍💻👨‍💻](https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke) 
 
 ### 2. Object.entries
 
