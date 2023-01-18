@@ -2,7 +2,7 @@
 title: "Vscode快捷鍵"
 date: "2023-01-17"
 tags: ["Editor"]
-# lastUpdate: "2023-01-17"
+lastUpdate: "2023-01-18"
 ---
 
 ## 視窗
@@ -13,6 +13,7 @@ tags: ["Editor"]
 * 開關command line視窗 `cmd+j`
 * 切換分頁 `cmd+1`, `cmd+2`, `cmd+3`
 * 關閉分頁 `cmd+w`
+* 關閉所有分頁 `cmd+k cmd+w`
 
 ## 搜尋
 * 搜尋檔案 `cmd+p`

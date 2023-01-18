@@ -2,10 +2,10 @@
 title: "TypeScript"
 date: "2022-11-25"
 tags: ["TypeScript"]
-lastUpdate: "2022-12-15"
+lastUpdate: "2023-01-18"
 ---
 
-### React元件範例 
+## React元件範例 
 
 ```jsx
 const Header = ({ title }: { title: string }) => {
@@ -25,6 +25,25 @@ const Header = ({ children }: { children: ReactNode }): ReactElement => {
 <Header>
   <strong>Hello</strong>
 </Header>
+```
+
+* 參考
+  * [[YouTube] Typescript for React Components From Beginners to Masters](https://www.youtube.com/watch?v=z8lDwLKthr8&list=WL&index=1)
+
+### 常見的React Type
+* FC\
+  常見於Component回傳型態, `FC<T>`定義Component回傳型態為`FC<T>`,是一個FC(Function Component)可接受一個T型態的Props。
+```ts
+import type { FC } from 'react'
+const MyComponent: FC<Props> => (props: Props) => {
+      /* ... */
+}
+```
+
+* CSSProperties\
+當傳遞style做為Properties可以使用CSSProperties做為style的type
+```ts
+import type { CSSProperties } from 'react'
 ```
 
 ## types 邏輯運算
@@ -55,7 +74,7 @@ type If<C, T, F> = C extends true ? T : F;
 // C是否是true,是的情況返回T, 否則返回F
 ```
 
-## Typescript Utility Types
+## Utility Types
 ### Record & Pick
 ```ts
 enum CATEGORY {
@@ -142,9 +161,6 @@ type Awaited<T> = T extends Promise<infer R> ?
   判斷Promise裡面是不是還有Promise,是的話遞迴處理,否則回傳T
 */
 ```
-
-
-## Reference
-
-- [[YouTube] Typescript for React Components From Beginners to Masters](https://www.youtube.com/watch?v=z8lDwLKthr8&list=WL&index=1)
-- [type-challenges](https://github.com/type-challenges/type-challenges)
+* 參考 
+  - [type-challenges](https://github.com/type-challenges/type-challenges)
+  - [TypeScript: Documentation - Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
