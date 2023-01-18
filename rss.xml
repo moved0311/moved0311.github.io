@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 17 Jan 2023 10:09:37 GMT</lastBuildDate><item><title><![CDATA[Vscode快捷鍵]]></title><description><![CDATA[視窗 在右側視窗開啟檔案  openInNewWindow 開關檔案目錄  開關command line視窗  切換分頁 , ,  關閉分頁  搜尋 搜尋檔案  跳到相同字位置  選取相同字  搜尋整個專案關鍵字]]></description><link>https://moved0311.github.io/2023-01-16-Vscode/</link><guid isPermaLink="false">https://moved0311.github.io/2023-01-16-Vscode/</guid><pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;視窗&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 18 Jan 2023 09:56:49 GMT</lastBuildDate><item><title><![CDATA[Vscode快捷鍵]]></title><description><![CDATA[視窗 在右側視窗開啟檔案  openInNewWindow 開關檔案目錄  開關command line視窗  切換分頁 , ,  關閉分頁  關閉所有分頁  搜尋 搜尋檔案  跳到相同字位置  選取相同字  搜尋整個專案關鍵字]]></description><link>https://moved0311.github.io/2023-01-16-Vscode/</link><guid isPermaLink="false">https://moved0311.github.io/2023-01-16-Vscode/</guid><pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;視窗&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;在右側視窗開啟檔案 &lt;code class=&quot;language-text&quot;&gt;cmd+option click&lt;/code&gt;&lt;/p&gt;
@@ -8,6 +8,7 @@
 &lt;li&gt;開關command line視窗 &lt;code class=&quot;language-text&quot;&gt;cmd+j&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;切換分頁 &lt;code class=&quot;language-text&quot;&gt;cmd+1&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;cmd+2&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;cmd+3&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;關閉分頁 &lt;code class=&quot;language-text&quot;&gt;cmd+w&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;關閉所有分頁 &lt;code class=&quot;language-text&quot;&gt;cmd+k cmd+w&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;搜尋&lt;/h2&gt;
 &lt;ul&gt;
@@ -15,7 +16,7 @@
 &lt;li&gt;跳到相同字位置 &lt;code class=&quot;language-text&quot;&gt;ctrl+f&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;選取相同字 &lt;code class=&quot;language-text&quot;&gt;cmd+d&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;搜尋整個專案關鍵字 &lt;code class=&quot;language-text&quot;&gt;cmd+shift+f&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[TypeScript]]></title><description><![CDATA[React元件範例 types 邏輯運算 AND OR IF 在Typescript中用extends關鍵字來表示分支(if…else) Typescript Utility Types Record & Pick Picker實作 Readonly ,將type T…]]></description><link>https://moved0311.github.io/2022-11-23-TypeScript/</link><guid isPermaLink="false">https://moved0311.github.io/2022-11-23-TypeScript/</guid><pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;React元件範例&lt;/h3&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[TypeScript]]></title><description><![CDATA[React元件範例 參考 [YouTube] Typescript for React Components From Beginners to Masters 常見的React Type FC 常見於Component回傳型態, 定義Component回傳型態為,是一個FC…]]></description><link>https://moved0311.github.io/2022-11-23-TypeScript/</link><guid isPermaLink="false">https://moved0311.github.io/2022-11-23-TypeScript/</guid><pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React元件範例&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;Header&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; string &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
@@ -30,6 +31,30 @@
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Header&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Header&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;參考&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=z8lDwLKthr8&amp;#x26;list=WL&amp;#x26;index=1&quot;&gt;[YouTube] Typescript for React Components From Beginners to Masters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;常見的React Type&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;FC&lt;br&gt;
+常見於Component回傳型態, &lt;code class=&quot;language-text&quot;&gt;FC&amp;lt;T&amp;gt;&lt;/code&gt;定義Component回傳型態為&lt;code class=&quot;language-text&quot;&gt;FC&amp;lt;T&amp;gt;&lt;/code&gt;,是一個FC(Function Component)可接受一個T型態的Props。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;FC&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MyComponent&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;FC&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Props&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;props&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Props&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;/* ... */&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CSSProperties&lt;br&gt;
+當傳遞style做為Properties可以使用CSSProperties做為style的type&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; CSSProperties &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;types 邏輯運算&lt;/h2&gt;
 &lt;h3&gt;AND OR&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; AType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -52,7 +77,7 @@ If&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span cla
 
 &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; If&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// C是否是true,是的情況返回T, 否則返回F&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Typescript Utility Types&lt;/h2&gt;
+&lt;h2&gt;Utility Types&lt;/h2&gt;
 &lt;h3&gt;Record &amp;#x26; Pick&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;CATEGORY&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token constant&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -123,10 +148,14 @@ Awaited&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;spa
   先判斷T是不是Prmoise不是回傳never
   判斷Promise裡面是不是還有Promise,是的話遞迴處理,否則回傳T
 */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=z8lDwLKthr8&amp;#x26;list=WL&amp;#x26;index=1&quot;&gt;[YouTube] Typescript for React Components From Beginners to Masters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;參考 &lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/type-challenges/type-challenges&quot;&gt;type-challenges&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/utility-types.html&quot;&gt;TypeScript: Documentation - Utility Types&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[鉅亨網前端工作一年心得]]></title><description><![CDATA[前言 在 2021 九月底開始在鉅亨前端工作，是我的第二份工作。 第一份工作是在接案公司，會離職是覺得接案公司的文化沒辦法長期累積經驗，沒有完整的開發流程，Code Review…]]></description><link>https://moved0311.github.io/2022-10-23-Work-Experience/</link><guid isPermaLink="false">https://moved0311.github.io/2022-10-23-Work-Experience/</guid><pubDate>Mon, 31 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;在 2021 九月底開始在鉅亨前端工作，是我的第二份工作。&lt;br&gt;
 第一份工作是在接案公司，會離職是覺得接案公司的文化沒辦法長期累積經驗，沒有完整的開發流程，Code Review、寫測試制度等等。所以在挑下一個工作時就會考慮公司要有自己的產品長期維護和有一套完整開發流程。&lt;/p&gt;
