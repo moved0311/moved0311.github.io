@@ -120,9 +120,11 @@ Power law</p>
 但 degree centrality 的缺點是如果有一個點的 degree 很低,
 但是這個點連接了多個 community,
 用 degree centrality 看不出這個點很重要</div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">![degreeCentrality](./degreeCentrality02.png)</code></pre></div>
 </li>
-</ol><p><strong>global</strong></p><ol start="2">
+</ol><div>   <span class="gatsby-resp-image-wrapper" style="position:relative;display:block;margin-left:0;margin-right:0;max-width:194px">
+      <span class="gatsby-resp-image-background-image" style="padding-bottom:95.94594594594595%;position:relative;bottom:0;left:0;background-image:url(&#x27;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAAB3klEQVQ4y5WU23LTMBCG/Qxc8Urc8wo8Dq/RKwaYArccZlJC2qEH4qaJZEuW5UNOtmrFdl3LkvAhFHAaJmjGGs1qv/3/We3Y0FpprSMOgvVle2y+A5fRZTv+lTkdzEO2iM30LmpqqEeq9II1rBn3qUe9AHmhb86OY+7ug3vxBiaLTyYYYv/zNTiBiOZF8ah7qWRW8Hr/Cy6FJi4B+AJYdAyPlrdWqyB7fFFmP6wjPySVkLK9NFSrwTMG3DerKEqzFGEkhOg8tjZVZ5UxDiD0Aza1R5b/XlStcpfwIJRnGSE0v682eSG7EkqvGb2239EAAPIBu5R4eGv7dzP0VuQ2SdHJcz56OneOV1FKXRIuPIucI+KY4AyisTsf1mLGbjfrLUtDNniizwz87QXbaCXLOlgJjbyPU+sUuzCMLyq5C7cFarfe5GUwepbEoGtevRpHqZ+kq4cHM/a95HLNljHfeXD1a5f/ggOfiDLtkv64kv0h2V2luHOIdchs92QbKbo8vwRveZKXQlSVPBRuulrpetAthKkX36DXq2S2b9R7sGplv9rklIQD6Axt7EYs/g845t7MGkNncgMn0PkSJc6B8DYp2TDTemVjQsPvSRYeCncFKinWiXtfFkpptf/X8hMsZUXMO0tDuQAAAABJRU5ErkJggg==&#x27;);background-size:cover;display:block"></span>
+  <img class="gatsby-resp-image-image" alt="degreeCentrality" title="degreeCentrality" src="/static/cd9b30cae3f6a112a7daacbac7db34da/2bf95/degreeCentrality02.png" srcSet="/static/cd9b30cae3f6a112a7daacbac7db34da/12f09/degreeCentrality02.png 148w, /static/cd9b30cae3f6a112a7daacbac7db34da/2bf95/degreeCentrality02.png 194w" sizes="(max-width: 194px) 100vw, 194px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0" loading="lazy"/>
+    </span></div><p><strong>global</strong></p><ol start="2">
 <li>Betweeness Centrality<br/>
 所有點 A 到點 B 的 shortest path 有幾條經過<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>o</mi><mi>d</mi><msub><mi>e</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Node_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em"></span><span class="mord mathnormal" style="margin-right:0.10903em">N</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span></span></span></span></li>
 <li>Closeness Centrality<br/>
@@ -254,13 +256,11 @@ bottom-up
     距離取min  
 * complete link  
     距離取max<h4>Distance Matrix</h4><ol>
-<li>
-<p>Approach1<br/>
+<li>Approach1<br/>
 計算 weights W<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.597772em;vertical-align:-0.286108em"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em"><span style="top:-2.5500000000000003em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.05724em">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em"><span></span></span></span></span></span></span></span></span></span>
 _ i 到 j 的路徑越多代表 i 和 j 關係越好<br/>
-_ 只能找 non-overlapped paths * 只要 i 到 j 的路徑都算(weighted by length)</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">X$$_{ij}$$ = $$ \frac{1}{W_{ij}} $$</code></pre></div>
-</li>
+_ 只能找 non-overlapped paths * 只要 i 到 j 的路徑都算(weighted by length)</li>
+</ol><p>   X<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.597772em;vertical-align:-0.286108em"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em"><span style="top:-2.5500000000000003em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.05724em">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em"><span></span></span></span></span></span></span></span></span></span> = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><msub><mi>W</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{W_{ij}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3874279999999999em;vertical-align:-0.5423199999999999em"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em"><span style="top:-2.655em"><span class="pstrut" style="height:3em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em"><span style="top:-2.357em;margin-left:-0.13889em;margin-right:0.07142857142857144em"><span class="pstrut" style="height:2.5em"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.05724em">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2818857142857143em"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em"><span class="pstrut" style="height:3em"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.394em"><span class="pstrut" style="height:3em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5423199999999999em"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p><ol start="2">
 <li>Approach 2<br/>
 如果 i 和 j 視同一群,那他們有相似的 behavior<br/>
 behavoir<br/>
@@ -282,10 +282,12 @@ a 走到 b 會經過邊 v 的機率</li>
 <li>Current-flow
 引進電路學概念的計算方法</li>
 </ol><p>缺點</p><ol>
-<li>計算最短路徑耗時
-O(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup><mi>n</mi></mrow><annotation encoding="application/x-tex">m^2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal">n</span></span></span></span>)</li>
-</ol><div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">    m   edge
-    mn  betweeness</code></pre></div><ol start="2">
+<li>
+<p>計算最短路徑耗時
+O(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup><mi>n</mi></mrow><annotation encoding="application/x-tex">m^2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal">n</span></span></span></span>)</p>
+<div class="gatsby-highlight" data-language="plaintext"><pre class="language-plaintext"><code class="language-plaintext">m   edge
+mn  betweeness</code></pre></div>
+</li>
 <li>什麼時候停?<br/>
 什麼時候是最佳的分割</li>
 </ol><h2>Modularity</h2><p>Modularity measure:</p><blockquote>
@@ -593,7 +595,7 @@ each node has equal cost<br/>
 <p>set of n individuals , a graph , a task</p>
 </blockquote><p>Find</p><blockquote>
 <p>必須包含 task,individuals skill 聯集要包含 task</p>
-</blockquote><div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">communication cost要最小越好</code></pre></div><p><strong>Communication Cost</strong><br/>
+</blockquote><p>communication cost要最小越好</p><p><strong>Communication Cost</strong><br/>
 Diameter</p><ul>
 <li>distance : shortest path (geodesic distance)</li>
 <li>eccentricity : 其中一個點到其他所有點的 shortest path,並取最大的值</li>
@@ -672,25 +674,24 @@ SIR model</p><ul>
 <p>包含硬體,OS,driver,networking<br/>
 使用者不用管理或控制底層的東西</p>
 </blockquote>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Virtualization:
-Abstraction of logical resource away from underlying phyical resources
-Improve utilization,security</code></pre></div>
 </li>
+</ol><p>   Virtualization:
+Abstraction of logical resource away from underlying phyical resources
+Improve utilization,security</p><ol start="2">
 <li>
 <p>Paas(Platform as a Service)</p>
 <blockquote>
 <p>提供工程師一個寫程式的環境,包含程式語言和工具,且不用管理底層的硬體但可以做控制</p>
 </blockquote>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">e.g. Programming IDE,Programming API,System Control interface,Hadoop,Google App Engine,Microsoft Windows Azure</code></pre></div>
 </li>
+</ol><p>   e.g. Programming IDE,Programming API,System Control interface,Hadoop,Google App Engine,Microsoft Windows Azure</p><ol start="3">
 <li>
 <p>SaaS(Software as a Service)</p>
 <blockquote>
 <p>提供應用程式給一般人使用,透過 clinet 界面就可以使用</p>
 </blockquote>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">e.g. web Service,Google App</code></pre></div>
 </li>
-</ol><h1 id="9_1">MapReduce</h1><ul>
+</ol><p>   e.g. web Service,Google App</p><h1 id="9_1">MapReduce</h1><ul>
 <li>A programming model</li>
 </ul><p>local aggregation
 map 跑完的結果先處理(先加起來)
