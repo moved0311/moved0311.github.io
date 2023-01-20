@@ -10,12 +10,12 @@ palindromic 回文，字串由左至右讀和由右至左讀結果相同。e.g. 
 
 ## 計算在字串中有多少個回文
 
-```
+```plain
 input: "abc"
 output: 3  ("a","b","c")
 ```
 
-```
+```plain
 input: "aaa"
 output: 6 ("a","a","a","aa","aa","aaa")
 ```

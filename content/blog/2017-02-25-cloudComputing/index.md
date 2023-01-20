@@ -132,7 +132,7 @@ tags: ["學校課程"]
     但是這個點連接了多個 community,
     用 degree centrality 看不出這個點很重要
 
-        ![degreeCentrality](./degreeCentrality02.png)
+   ![degreeCentrality](./degreeCentrality02.png)
 
 **global**
 
@@ -270,9 +270,9 @@ bottom-up
 1.  Approach1  
     計算 weights W$$_{ij}$$
     _ i 到 j 的路徑越多代表 i 和 j 關係越好  
-     _ 只能找 non-overlapped paths \* 只要 i 到 j 的路徑都算(weighted by length)
+    _ 只能找 non-overlapped paths \* 只要 i 到 j 的路徑都算(weighted by length)
 
-        X$$_{ij}$$ = $$ \frac{1}{W_{ij}} $$
+   X$$_{ij}$$ = $$ \frac{1}{W_{ij}} $$
 
 2.  Approach 2  
     如果 i 和 j 視同一群,那他們有相似的 behavior  
@@ -306,10 +306,10 @@ bottom-up
 1. 計算最短路徑耗時
    O($m^2n$)
 
-```
-    m   edge
-    mn  betweeness
-```
+   ```plain text
+   m   edge
+   mn  betweeness
+   ```
 
 2. 什麼時候停?  
    什麼時候是最佳的分割
@@ -687,7 +687,7 @@ Find
 
 > 必須包含 task,individuals skill 聯集要包含 task
 
-    communication cost要最小越好
+communication cost要最小越好
 
 **Communication Cost**  
 Diameter
@@ -804,21 +804,21 @@ SIR model
     > 包含硬體,OS,driver,networking  
     > 使用者不用管理或控制底層的東西
 
-        Virtualization:
-        Abstraction of logical resource away from underlying phyical resources
-        Improve utilization,security
+   Virtualization:
+   Abstraction of logical resource away from underlying phyical resources
+   Improve utilization,security
 
 2.  Paas(Platform as a Service)
 
     > 提供工程師一個寫程式的環境,包含程式語言和工具,且不用管理底層的硬體但可以做控制
 
-        e.g. Programming IDE,Programming API,System Control interface,Hadoop,Google App Engine,Microsoft Windows Azure
+   e.g. Programming IDE,Programming API,System Control interface,Hadoop,Google App Engine,Microsoft Windows Azure
 
 3.  SaaS(Software as a Service)
 
     > 提供應用程式給一般人使用,透過 clinet 界面就可以使用
 
-        e.g. web Service,Google App
+   e.g. web Service,Google App
 
 <!-- 20170525 -->
 

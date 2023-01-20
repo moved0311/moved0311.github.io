@@ -325,7 +325,7 @@ $$ P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
 
 from chain rule: $$ P(A|B)P(B) = P(B|A)P(A) $$
 
-```text
+```plain
 P(A)    : 事前機率(prior probability)
 P(A|B)  : 事後機率(postior probability)
 P(B|A)  : likelihood
@@ -485,7 +485,7 @@ $$ P(q|M_d) = P((t_1,...,t_{|q|})|M_d) = \prod_{1 \leq k \leq |q|} P(t_k|M_d) = 
 - [Maximun Likelihood Estimation(MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation)
   > $$\hat{P}(t|M_d) = \frac{tf_{t,d}}{|d|}$$
 
-```text
+```plain
 hat符號表示估計值的意思
 ```
 
