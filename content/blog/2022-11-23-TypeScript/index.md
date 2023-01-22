@@ -75,7 +75,7 @@ type If<C, T, F> = C extends true ? T : F;
 ```
 
 ## Utility Types
-### Record & Pick
+### Record
 ```ts
 enum CATEGORY {
   A = "a",
@@ -85,6 +85,16 @@ enum CATEGORY {
 
 type ContentAll = Record<CATEGORY, string>;
 // {a :string, b: string, c: string}
+```
+
+### Pick
+
+```ts
+enum CATEGORY {
+  A = "a",
+  B = "b",
+  C = "c"
+}
 
 type ContentPick = Pick<ContentAll, CATEGORY.A | CATEGORY.C>
 // {a: string, c: string}
@@ -104,6 +114,21 @@ type ContentPick = Pick<ContentAll, CATEGORY.A | CATEGORY.C>
       keyof Todo -> "title" | "completed"
   */
   ```
+
+### Omit
+`Omit<Type, Keys>`, 將Type中的Keys排除
+
+```ts
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+  createdAt: number;
+}
+
+type TodoInfo = Omit<Todo, "completed" | "createdAt">;
+// { title: string, description: string }
+```
 
 ### Readonly
 `Readonly<T>`,將type T 設定成唯讀屬性
