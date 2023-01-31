@@ -343,7 +343,7 @@ f(n) < g(n)
 
 ### Linear Search
 
-```
+```plain
  0 1 2  3 4 5 6 7  8  9
 [8,6,12,5,9,7,4,3,16,18]
 ```
@@ -358,7 +358,7 @@ $\frac{1+2+3+...+n}{n}$ = $\frac{\frac{n(n+1)}{2}}{n}$ = $\frac{n+1}{2}$ , A(n) 
 
 ### Binary Search
 
-```
+```plain
   balance bst               skewed bst
      20                        40
    /    \                     /
