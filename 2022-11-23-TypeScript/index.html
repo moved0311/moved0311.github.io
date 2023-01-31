@@ -60,7 +60,7 @@ If<span class="token operator">&lt;</span><span class="token boolean">false</spa
 <span class="token keyword">type</span> If<span class="token operator">&lt;</span><span class="token constant">C</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">F</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token constant">C</span> <span class="token keyword">extends</span> <span class="token class-name">true</span> <span class="token operator">?</span> <span class="token constant">T</span> <span class="token operator">:</span> <span class="token constant">F</span><span class="token punctuation">;</span>
 <span class="token comment">// C是否是true,是的情況返回T, 否則返回F</span></code></pre></div>
 <h2>Utility Types</h2>
-<h3>Record &amp; Pick</h3>
+<h3>Record</h3>
 <div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">enum</span> <span class="token constant">CATEGORY</span> <span class="token punctuation">{</span>
   <span class="token constant">A</span> <span class="token operator">=</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
   <span class="token constant">B</span> <span class="token operator">=</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span>
@@ -68,7 +68,13 @@ If<span class="token operator">&lt;</span><span class="token boolean">false</spa
 <span class="token punctuation">}</span>
 
 <span class="token keyword">type</span> ContentAll <span class="token operator">=</span> Record<span class="token operator">&lt;</span><span class="token constant">CATEGORY</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
-<span class="token comment">// {a :string, b: string, c: string}</span>
+<span class="token comment">// {a :string, b: string, c: string}</span></code></pre></div>
+<h3>Pick</h3>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">enum</span> <span class="token constant">CATEGORY</span> <span class="token punctuation">{</span>
+  <span class="token constant">A</span> <span class="token operator">=</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+  <span class="token constant">B</span> <span class="token operator">=</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span>
+  <span class="token constant">C</span> <span class="token operator">=</span> <span class="token string">&quot;c&quot;</span>
+<span class="token punctuation">}</span>
 
 <span class="token keyword">type</span> ContentPick <span class="token operator">=</span> Pick<span class="token operator">&lt;</span>ContentAll<span class="token punctuation">,</span> <span class="token constant">CATEGORY</span><span class="token punctuation">.</span><span class="token constant">A</span> <span class="token operator">|</span> <span class="token constant">CATEGORY</span><span class="token punctuation">.</span><span class="token constant">C</span><span class="token operator">&gt;</span>
 <span class="token comment">// {a: string, c: string}</span></code></pre></div>
@@ -88,6 +94,17 @@ If<span class="token operator">&lt;</span><span class="token boolean">false</spa
 */</span></code></pre></div>
 </li>
 </ul>
+<h3>Omit</h3>
+<p><code class="language-text">Omit&lt;Type, Keys&gt;</code>, 將Type中的Keys排除</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">Todo</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  description<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  completed<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+  createdAt<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> TodoInfo <span class="token operator">=</span> Omit<span class="token operator">&lt;</span>Todo<span class="token punctuation">,</span> <span class="token string">&quot;completed&quot;</span> <span class="token operator">|</span> <span class="token string">&quot;createdAt&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token comment">// { title: string, description: string }</span></code></pre></div>
 <h3>Readonly</h3>
 <p><code class="language-text">Readonly&lt;T&gt;</code>,將type T 設定成唯讀屬性</p>
 <div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts">  <span class="token keyword">type</span> MyReadonly<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
