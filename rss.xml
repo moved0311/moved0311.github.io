@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 31 Jan 2023 02:33:04 GMT</lastBuildDate><item><title><![CDATA[Vscode快捷鍵]]></title><description><![CDATA[視窗 在右側視窗開啟檔案  openInNewWindow 開關檔案目錄  開關command line視窗  切換分頁 , ,  關閉分頁  關閉所有分頁  搜尋 搜尋檔案  跳到相同字位置  選取相同字  搜尋整個專案關鍵字]]></description><link>https://moved0311.github.io/2023-01-16-Vscode/</link><guid isPermaLink="false">https://moved0311.github.io/2023-01-16-Vscode/</guid><pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;視窗&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 03 Feb 2023 08:56:33 GMT</lastBuildDate><item><title><![CDATA[Husky]]></title><description><![CDATA[幫助使用者在commit階段做一些預先檢查，例如要通過測試才能commit, 程式碼排版, lint檢查等等。 安裝 插入shell script 在commit時,就會依照不同階段執行,等動作 中斷Commit檢查 怎麼運作的 husky install…]]></description><link>https://moved0311.github.io/2023-02-03-husky/</link><guid isPermaLink="false">https://moved0311.github.io/2023-02-03-husky/</guid><pubDate>Fri, 03 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;幫助使用者在commit階段做一些預先檢查，例如要通過測試才能commit, 程式碼排版, lint檢查等等。&lt;/p&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; init &lt;span class=&quot;token comment&quot;&gt;# 產生package.json&lt;/span&gt;
+npx husky-init &lt;span class=&quot;token comment&quot;&gt;# 產生.husky&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 安裝husky相關套現&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;插入shell script&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;npx husky &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; .husky/pre-commit &lt;span class=&quot;token string&quot;&gt;&apos;echo &quot;pre-commit&quot;&apos;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;# 在.husky/pre-commit檔案插入後方指令。也可以直接修改pre-commit檔案&lt;/span&gt;
+
+npx husky &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; .husky/commit-msg &lt;span class=&quot;token string&quot;&gt;&apos;echo &quot;commit-msg&quot;&apos;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# 如果原本不存在commit-msg, 產生一個新的.husky/commit-msg&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在commit時,就會依照不同階段執行&lt;code class=&quot;language-text&quot;&gt;pre-commit&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;commit-msg&lt;/code&gt;等動作&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;feat: add pre-commit hooks&quot;&lt;/span&gt;             
+pre-commit
+commit-msg
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;master af64edc&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; feat: &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; pre-commit hooks
+ &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; changed, &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; insertion&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; deletion&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;中斷Commit檢查&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 執行到這行會跳出,不能commit&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;怎麼運作的&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;husky install&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在&lt;code class=&quot;language-text&quot;&gt;.husky/.git/config&lt;/code&gt;塞入&lt;code class=&quot;language-text&quot;&gt;hooksPath=.husky&lt;/code&gt;  (&lt;code class=&quot;language-text&quot;&gt;git config -e&lt;/code&gt; 或是&lt;code class=&quot;language-text&quot;&gt;git config --get core.hooksPath&lt;/code&gt;查看), 將git hooks和husky做連動&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;code class=&quot;language-text&quot;&gt;.husky&lt;/code&gt;目錄下會有一些檔案例如&lt;code class=&quot;language-text&quot;&gt;pre-commit&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;commit-msg&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;對應到不同生命週期執行對應的shell檔案, 名稱好像不能自己定?, 要依據&lt;code class=&quot;language-text&quot;&gt;.git/hooks&lt;/code&gt;裡面給的範例命名, e.g. &lt;code class=&quot;language-text&quot;&gt;commit-msg&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;post-update&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;prepare-commit-msg&lt;/code&gt;,…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://typicode.github.io/husky/#/&quot;&gt;typicode - husky&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Vscode快捷鍵]]></title><description><![CDATA[視窗 在右側視窗開啟檔案  openInNewWindow 開關檔案目錄  開關command line視窗  切換分頁 , ,  關閉分頁  關閉所有分頁  搜尋 搜尋檔案  跳到相同字位置  選取相同字  搜尋整個專案關鍵字]]></description><link>https://moved0311.github.io/2023-01-16-Vscode/</link><guid isPermaLink="false">https://moved0311.github.io/2023-01-16-Vscode/</guid><pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;視窗&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;在右側視窗開啟檔案 &lt;code class=&quot;language-text&quot;&gt;cmd+option click&lt;/code&gt;&lt;/p&gt;
