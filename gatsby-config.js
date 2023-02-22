@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Taiyi's Blog`,
@@ -66,7 +70,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-158033292-3`,
+        trackingId: `UA-158033292-3` /* GA3 */,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GA_ID] /* GA4 */,
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+          exclude: ["/preview/**"],
+        },
       },
     },
     `gatsby-plugin-feed`,
