@@ -9,7 +9,7 @@ date: "2023-02-03"
 ```shell
 yarn init # 產生package.json
 npx husky-init # 產生.husky
-yarn install # 安裝husky相關套現
+yarn install # 安裝husky相關套件
 ```
 
 ### 插入shell script
