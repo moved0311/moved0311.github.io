@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 16 Mar 2023 02:40:12 GMT</lastBuildDate><item><title><![CDATA[將UI元件庫發佈到Gitlab上]]></title><description><![CDATA[要怎麼把公司UI共用元件庫打包發佈讓所有專案能夠使用又不希望上傳到公開的元件庫？ 一般下載套件如使用yarn作為套件管理工具都是到公開元件 https://yarnpkg.com…]]></description><link>https://moved0311.github.io/2023-03-02-publish-to-gitlab/Publish to gitlab registry/</link><guid isPermaLink="false">https://moved0311.github.io/2023-03-02-publish-to-gitlab/Publish to gitlab registry/</guid><pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;div&gt;&lt;p&gt;要怎麼把公司UI共用元件庫打包發佈讓所有專案能夠使用又不希望上傳到公開的元件庫？&lt;/p&gt;&lt;p&gt;一般下載套件如使用yarn作為套件管理工具都是到公開元件 &lt;a href=&quot;https://yarnpkg.com/&quot;&gt;https://yarnpkg.com/&lt;/a&gt; 做下載，但公司的東西不希望放到公開的地方，希望能夠放到自己的機器上。目前公司是將所有程式碼都存放在自己架Gitlab機器上。&lt;/p&gt;&lt;p&gt;前端的共用UI元件庫要怎麼推到Gitlab上，並可以從Gitlab做下載呢？&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Taiyi's Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://moved0311.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Apr 2023 03:19:38 GMT</lastBuildDate><item><title><![CDATA[Bit Manipulation]]></title><description><![CDATA[XOR 找到最低位的1 消掉最低位的1]]></description><link>https://moved0311.github.io/2023-03-17-Leetcode/</link><guid isPermaLink="false">https://moved0311.github.io/2023-03-17-Leetcode/</guid><pubDate>Fri, 17 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;XOR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;找到最低位的1&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;x &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;x
+&lt;span class=&quot;token comment&quot;&gt;/*
+6 ^ -6 = 110 ^ 010 = 010
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;消掉最低位的1&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;x &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[將UI元件庫發佈到Gitlab上]]></title><description><![CDATA[要怎麼把公司UI共用元件庫打包發佈讓所有專案能夠使用又不希望上傳到公開的元件庫？ 一般下載套件如使用yarn作為套件管理工具都是到公開元件 https://yarnpkg.com…]]></description><link>https://moved0311.github.io/2023-03-02-publish-to-gitlab/Publish to gitlab registry/</link><guid isPermaLink="false">https://moved0311.github.io/2023-03-02-publish-to-gitlab/Publish to gitlab registry/</guid><pubDate>Thu, 02 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;div&gt;&lt;p&gt;要怎麼把公司UI共用元件庫打包發佈讓所有專案能夠使用又不希望上傳到公開的元件庫？&lt;/p&gt;&lt;p&gt;一般下載套件如使用yarn作為套件管理工具都是到公開元件 &lt;a href=&quot;https://yarnpkg.com/&quot;&gt;https://yarnpkg.com/&lt;/a&gt; 做下載，但公司的東西不希望放到公開的地方，希望能夠放到自己的機器上。目前公司是將所有程式碼都存放在自己架Gitlab機器上。&lt;/p&gt;&lt;p&gt;前端的共用UI元件庫要怎麼推到Gitlab上，並可以從Gitlab做下載呢？&lt;br&gt;
 Gitlab有提供Packages &amp;#x26; Registries(圖1)讓套件上傳的空間。配合CICD每次push或增加tag時能夠一併做發佈的動作(圖2)&lt;/p&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -321,7 +334,7 @@ token可以到使用者的Edit Profile中註冊一個&lt;/p&gt;&lt;div&gt;&lt;sp
 &lt;h2&gt;安裝&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; init &lt;span class=&quot;token comment&quot;&gt;# 產生package.json&lt;/span&gt;
 npx husky-init &lt;span class=&quot;token comment&quot;&gt;# 產生.husky&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 安裝husky相關套現&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 安裝husky相關套件&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;插入shell script&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;npx husky &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; .husky/pre-commit &lt;span class=&quot;token string&quot;&gt;&apos;echo &quot;pre-commit&quot;&apos;&lt;/span&gt; 
 &lt;span class=&quot;token comment&quot;&gt;# 在.husky/pre-commit檔案插入後方指令。也可以直接修改pre-commit檔案&lt;/span&gt;
@@ -355,7 +368,7 @@ commit-msg
 &lt;h2&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://typicode.github.io/husky/#/&quot;&gt;typicode - husky&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Vscode快捷鍵]]></title><description><![CDATA[視窗 在右側視窗開啟檔案  openInNewWindow 開關檔案目錄  開關command line視窗  切換分頁 , ,  關閉分頁  關閉所有分頁  搜尋 搜尋檔案  跳到相同字位置  選取相同字  搜尋整個專案關鍵字]]></description><link>https://moved0311.github.io/2023-01-16-Vscode/</link><guid isPermaLink="false">https://moved0311.github.io/2023-01-16-Vscode/</guid><pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;視窗&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Vscode快捷鍵]]></title><description><![CDATA[視窗 在右側視窗開啟檔案  openInNewWindow 開關檔案目錄  開關command line視窗  切換分頁 , ,  關閉分頁  關閉所有分頁  搜尋 搜尋檔案  跳到相同字位置  選取相同字  搜尋整個專案關鍵字  瀏覽器 將目前分頁加到書籤  Reference…]]></description><link>https://moved0311.github.io/2023-01-16-Vscode/</link><guid isPermaLink="false">https://moved0311.github.io/2023-01-16-Vscode/</guid><pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;視窗&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;在右側視窗開啟檔案 &lt;code class=&quot;language-text&quot;&gt;cmd+option click&lt;/code&gt;&lt;/p&gt;
@@ -373,6 +386,14 @@ commit-msg
 &lt;li&gt;跳到相同字位置 &lt;code class=&quot;language-text&quot;&gt;ctrl+f&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;選取相同字 &lt;code class=&quot;language-text&quot;&gt;cmd+d&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;搜尋整個專案關鍵字 &lt;code class=&quot;language-text&quot;&gt;cmd+shift+f&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;瀏覽器&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;將目前分頁加到書籤 &lt;code class=&quot;language-text&quot;&gt;cmd+d&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf&quot;&gt;vscode keyboard shortcuts&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[TypeScript]]></title><description><![CDATA[React元件範例 參考 [YouTube] Typescript for React Components From Beginners to Masters 常見的React Type FC 常見於Component回傳型態, 定義Component回傳型態為,是一個FC…]]></description><link>https://moved0311.github.io/2022-11-23-TypeScript/</link><guid isPermaLink="false">https://moved0311.github.io/2022-11-23-TypeScript/</guid><pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;React元件範例&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;Header&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; string &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
