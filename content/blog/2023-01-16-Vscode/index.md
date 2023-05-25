@@ -23,6 +23,7 @@ lastUpdate: "2023-04-17"
 
 ## 瀏覽器
 * 將目前分頁加到書籤 `cmd+d`
+* 修改目前網址列 `cmd+l`
 
 
 ## Reference
