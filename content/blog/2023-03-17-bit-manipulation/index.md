@@ -29,11 +29,9 @@ const isPowerOfTwo = (x !== 0) && ((n & (n - 1) === 0))
 ```ts
 a = 4
 b = 6
-
 a = a ^ b
 b = a ^ b
 a = a ^ b
-
 console.log(a, b) // 6 4
 ```
 

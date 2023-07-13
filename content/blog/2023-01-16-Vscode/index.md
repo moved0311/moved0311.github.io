@@ -1,11 +1,12 @@
 ---
-title: "Vscode快捷鍵"
+title: "常用快捷鍵"
 date: "2023-01-17"
 tags: ["Editor"]
-lastUpdate: "2023-04-17"
+lastUpdate: "2023-07-05"
 ---
 
-## 視窗
+## Vscode
+### 視窗
 * 在右側視窗開啟檔案 `cmd+option click`
 
   ![openInNewWindow](./openInNewWindow.gif)
@@ -15,7 +16,7 @@ lastUpdate: "2023-04-17"
 * 關閉分頁 `cmd+w`
 * 關閉所有分頁 `cmd+k cmd+w`
 
-## 搜尋
+### 搜尋
 * 搜尋檔案 `cmd+p`
 * 跳到相同字位置 `ctrl+f`
 * 選取相同字 `cmd+d`
