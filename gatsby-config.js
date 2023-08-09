@@ -1,9 +1,13 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Taiyi's Blog`,
     author: {
       name: `Taiyi`,
-      summary: `who lives and works in Taiwan.`,
+      summary: `目前正在鉅亨擔任前端打工仔`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://moved0311.github.io/`,
@@ -11,7 +15,7 @@ module.exports = {
       github: `https://github.com/moved0311`,
       twitter: "taiyi_",
       facebook: "https://www.facebook.com/profile.php?id=100000329876068",
-      linkedin: "https://www.linkedin.com/in/jiang-taiyi-7854ba205/",
+      linkedin: "https://www.linkedin.com/in/jiang-taiyi/",
       cv: "https://moved0311.github.io/resume/"
     },
   },
@@ -67,7 +71,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-158033292-3`,
+        trackingId: `UA-158033292-3` /* GA3 */,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GA_ID] /* GA4 */,
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+          exclude: ["/preview/**"],
+        },
       },
     },
     `gatsby-plugin-feed`,
@@ -80,7 +95,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/web-icon.svg`,
       },
     },
     `gatsby-plugin-react-helmet`,

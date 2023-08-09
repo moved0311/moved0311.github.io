@@ -63,6 +63,7 @@ const Contact = () => {
             github
             facebook
             linkedin
+            cv
           }
         }
       }

@@ -2,11 +2,8 @@
 title: "ES6-ES12"
 date: "2021-08-31"
 tags: ["JS"]
-lastUpdate: "2022-02-01"
+lastUpdate: "2023-01-21"
 ---
-
-別相信 Blog，直接看第一手資料
-
 - [ECMAScript Language Specification](https://tc39.es/ecma262/)
 
 # Content
@@ -19,7 +16,7 @@ lastUpdate: "2022-02-01"
 - [ES11 (ECMAScript 2020)](#ES11)
 - [ES12 (ECMAScript 2021)](#ES12)
 
-<h1 id="ES6">ES6 (ECMAScript 2015)</h1>
+<h2 id="ES6">ES6 (ECMAScript 2015)</h2>
 
 ### 1. let/const
 
@@ -207,9 +204,78 @@ for (let n of nums) {
 */
 ```
 
-### 8. generators
+### 8. Generators
+* 一般function
+```js
+  function f() {
+      console.log('1.')
+      console.log('2.')
 
-- [ES6 Generator 基礎 #1](https://github.com/aszx87410/blog/issues/1)
+      return 'Hello World'
+  }
+```
+* generator function\
+會在function保留字後面在加上星號(*)\
+generator function回傳值是generator object, 是一個iterator\
+genertaor function內使用`yield`來暫停執行。
+```js
+  function* f() {
+      yield 'yield 1.'
+      console.log('1.')
+
+      yield 'yield 2.'
+      console.log('2.')
+
+      return 'Hello World'
+  }
+
+  const iter = f()
+  iter.next() // {value: 'yield 1.', done: false}
+  iter.next() // {value: 'yield 2.', done: false}
+  iter.next() // {value: 'Hello World', done: true}
+```
+
+```js
+function* f() {
+  yield 'a'
+  yield 'b'
+  yield 'c'
+  yield 'd'
+}
+
+const iter = f()
+console.log([...iter]) // [a, b, c, d]
+```
+
+### 費式數列例子
+```ts
+// Generates an infinite stream of Fibonacci numbers.
+// The generator doesn't keep the array of all numbers.
+function* fibonacci(): IterableIterator<number> {
+  let [a, b] = [0, 1];
+
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+
+function print(n: number) {
+  let i = 0;
+  for (const fib of fibonacci()) {
+    if (i++ === n) break;  
+    console.log(fib);
+  }  
+}
+
+// Print first 10 Fibonacci numbers.
+print(10);
+```
+
+* Reference
+  - [💡🎁 JavaScript Visualized: Generators and Iterators - DEV Community 👩‍💻👨‍💻](https://dev.to/lydiahallie/javascript-visualized-generators-and-iterators-e36)
+  - [clean-code-typescript#use-iterators-and-generators](https://github.com/labs42io/clean-code-typescript#use-iterators-and-generators)
+  - [ES6 Generator 基礎 #1](https://github.com/aszx87410/blog/issues/1)
 
 ### 9. unicode
 
@@ -339,7 +405,7 @@ decNum.toString(2) // "1010"
 
 - [Leetcode #67](https://leetcode.com/problems/add-binary/)
 
-<h1 id="ES7">ES7 (ECMAScript 2016)</h1>
+<h2 id="ES7">ES7 (ECMAScript 2016)</h2>
 
 ### 1. Exponentiation Operator
 
@@ -354,7 +420,7 @@ let arr = ["Tom", "Jack", "David"]
 arr.includes("Tom") // true
 ```
 
-<h1 id="ES8">ES8 (ECMAScript 2017)</h1>
+<h2 id="ES8">ES8 (ECMAScript 2017)</h2>
 
 ### 1. Async functions [(MDN)](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/async_function)
 
@@ -406,6 +472,9 @@ const run = async () => {
 }
 run()
 ```
+
+
+*  [⭐️🎀 JavaScript Visualized: Promises & Async/Await - DEV Community 👩‍💻👨‍💻](https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke) 
 
 ### 2. Object.entries
 
@@ -484,7 +553,7 @@ descriptors
 
 Atomic 是類似鎖，當 CPU1 在讀寫 shared memory 時，會把 shared memory 中的值複製一份到 cache 中。在讀寫時把 shared memory 鎖住，讓其他 CPU 不能夠讀寫，避免複製到舊的值，確保資料一致性。
 
-<h1 id="ES9">ES9 (ECMAScript 2018)</h1>
+<h2 id="ES9">ES9 (ECMAScript 2018)</h2>
 
 ### 1. Object rest and spread
 
@@ -616,7 +685,7 @@ console.log(tagged`This is ${version} (ECMAScript${year}).`)
 */
 ```
 
-<h1 id="ES10">ES10 (ECMAScript 2019)</h1>
+<h2 id="ES10">ES10 (ECMAScript 2019)</h2>
 
 ### 1. Array.flat() [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) / Array.flatMap() [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
 
@@ -669,7 +738,7 @@ s.trimStart() // 'hello   '
 s.trimEnd() // '   hello'
 ```
 
-<h1 id="ES11">ES11 (ECMAScript 2020) </h1>
+<h2 id="ES11">ES11 (ECMAScript 2020) </h2>
 
 ### 1. string.matchAll() [(MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
 
@@ -784,7 +853,7 @@ a?.d?.c // undefined
 - import.meta
 - export \* as ns from 'module'
 
-<h1 id="ES12">ES12 (ECMAScript 2021) </h1>
+<h2 id="ES12">ES12 (ECMAScript 2021) </h2>
 
 ### 1. replaceAll
 

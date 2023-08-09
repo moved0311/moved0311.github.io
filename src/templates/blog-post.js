@@ -7,16 +7,11 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import rehypeReact from "rehype-react"
 import styled from "styled-components"
+import PostContent from "./style"
 
-const StyledSection = styled.section`
-  pre {
-    background: white;
-    border: 1px solid #eee;
-  }
-`
 const Time = styled.span`
-  fontsize: 0.83255rem;
-  lineheight: 1.75rem;
+  font-size: 0.83255rem;
+  line-height: 1.75rem;
   margin-left: 10px;
 `
 
@@ -55,7 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             )}
           </p>
         </header>
-        <StyledSection>{renderAst(post.htmlAst)}</StyledSection>
+        <PostContent>{renderAst(post.htmlAst)}</PostContent>
         <hr
           style={{
             marginBottom: rhythm(1),

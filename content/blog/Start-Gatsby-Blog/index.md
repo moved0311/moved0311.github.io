@@ -3,6 +3,7 @@ title: Start Gatsby blog
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 tags: ["Gatsby"]
+lastUpdate: "2023-02-22"
 ---
 
 ## Install and fast start
@@ -29,5 +30,8 @@ tags: ["Gatsby"]
 ```
 
 ## Creating draft blog post in Gatsby
-
 - [Creating draft blog post in Gatsby](https://dev.to/bhansa/creating-draft-blog-post-in-gatsby-3868)
+
+## Add GA4
+- [Gatsby Google Analytics 4.0 | Step-by-Step Guide Using Gtag Plugin -](https://inspirezone.tech/gatsby-google-analytics-step-by-step-guide/)
+- [gatsby-plugin-google-gtag | Gatsby](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/)
