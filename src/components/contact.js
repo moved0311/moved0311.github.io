@@ -82,7 +82,7 @@ const Contact = () => {
         <Link href={social.linkedin} target="_blank">
           <Image fixed={data.linkedin.childImageSharp.fixed} />
         </Link>
-        <Link href="resume.pdf" target="_blank">
+        <Link href={social.cv} target="_blank">
           <Image fixed={data.cv.childImageSharp.fixed} />
         </Link>
       </CommunityContainer>
